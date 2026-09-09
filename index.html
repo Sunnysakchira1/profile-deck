@@ -177,15 +177,23 @@
   .eng .ec { font-size: 17px; line-height: 1.5; color: var(--body); border-top: 1px solid #ded9d1; padding-top: 18px; margin-top: 4px; }
 
   /* trend */
-  .trend { display: grid; grid-template-columns: 320px 1fr 210px; gap: 44px; align-items: center; padding: 22px 0; }
+  .trend { display: grid; grid-template-columns: 290px 1fr 236px; gap: 40px; align-items: center; padding: 24px 0; }
   .trend + .trend { border-top: 1px solid var(--rule); }
   .trend .tn { font-size: 22px; font-weight: 500; }
   .trend .tp { font-size: 14px; color: var(--muted); margin-top: 7px; text-transform: uppercase; letter-spacing: 0.14em; }
-  .bars { display: flex; align-items: flex-end; gap: 8px; height: 92px; border-bottom: 1px solid var(--rule); }
-  .bars i { flex: 1; background: var(--tint); border-radius: 4px 4px 0 0; display: block; min-height: 4px; }
-  .bars i.f, .bars i.l { background: var(--accent); }
-  .tdelta { font-size: 32px; font-weight: 700; letter-spacing: -0.03em; text-align: right; white-space: nowrap; color: var(--ink); }
-  .tpeak { font-size: 14px; color: var(--muted); text-align: right; margin-top: 8px; text-transform: uppercase; letter-spacing: 0.14em; }
+  .bars { display: flex; align-items: flex-end; gap: 7px; height: 104px; border-bottom: 1px solid var(--rule); position: relative; }
+  .bars i { flex: 1; background: var(--tint); border-radius: 4px 4px 0 0; display: block; min-height: 4px; position: relative; }
+  .bars i.f { background: #e5ded4; }
+  .bars i.l { background: var(--accent); }
+  .bars i.pk { background: var(--accent-d); }
+  .bars i.pk::after {
+    content: 'PEAK'; position: absolute; left: 50%; top: -21px; transform: translateX(-50%);
+    font-size: 11px; font-weight: 700; letter-spacing: .12em; color: var(--accent-d); white-space: nowrap;
+  }
+  .tnow { display: flex; align-items: baseline; gap: 10px; justify-content: flex-end; }
+  .tnow .big { font-size: 40px; font-weight: 700; letter-spacing: -0.035em; color: var(--accent-d); line-height: 1; }
+  .tnow .of { font-size: 17px; color: var(--body); }
+  .tfrom { font-size: 14px; color: var(--muted); text-align: right; margin-top: 9px; text-transform: uppercase; letter-spacing: .11em; }
 
   /* placements */
   .pcol { background: var(--tint-2); border-radius: var(--r); padding: 26px 26px 28px; }
@@ -480,26 +488,26 @@
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px;">
           <div>
-            <h2>Six weeks of growth,<br/>run by run.</h2>
-            <p class="lede">Share of tracked prompts naming the client in the AI answer. Sixteen collection runs, presented in sequence.</p>
+            <h2>At their peak, named in<br/>4 out of 5 answers.</h2>
+            <p class="lede">How many of a client's tracked prompts named them, on each of sixteen collection runs. The tall bar is their best run so far.</p>
           </div>
-          <div class="callout" style="margin:0; flex-shrink:0; max-width:380px;">Every run is shown, including the declines.</div>
+          <div class="callout" style="margin:0; flex-shrink:0; max-width:390px;">Every run is shown, dips included. Peaks: <b>77%</b>, <b>83%</b> and <b>41%</b> of prompts.</div>
         </div>
         <div style="flex:1; align-content:center; margin-top:10px;">
           <div class="trend">
-            <div><div class="tn">Wellness Clinic, Bangkok</div><div class="tp">22 prompts</div></div>
+            <div><div class="tn">Wellness Clinic, Bangkok</div><div class="tp">22 prompts tracked</div></div>
             <div class="bars" id="b-form"></div>
-            <div><div class="tdelta">36 → 64%</div><div class="tpeak">Peak 77%</div></div>
+            <div><div class="tnow"><span class="big">17</span><span class="of">of 22 named</span></div><div class="tfrom">Started at 8 · now 14</div></div>
           </div>
           <div class="trend">
-            <div><div class="tn">IVF Clinic, Bangkok</div><div class="tp">18 prompts</div></div>
+            <div><div class="tn">IVF Clinic, Bangkok</div><div class="tp">18 prompts tracked</div></div>
             <div class="bars" id="b-gfc"></div>
-            <div><div class="tdelta">28 → 72%</div><div class="tpeak">Peak 83%</div></div>
+            <div><div class="tnow"><span class="big">15</span><span class="of">of 18 named</span></div><div class="tfrom">Started at 5 · now 13</div></div>
           </div>
           <div class="trend">
-            <div><div class="tn">Aesthetic Clinic, Bangkok</div><div class="tp">29 prompts</div></div>
+            <div><div class="tn">Aesthetic Clinic, Bangkok</div><div class="tp">29 prompts tracked</div></div>
             <div class="bars" id="b-cosmo"></div>
-            <div><div class="tdelta">17 → 35%</div><div class="tpeak">Peak 41%</div></div>
+            <div><div class="tnow"><span class="big">12</span><span class="of">of 29 named</span></div><div class="tfrom">Started at 5 · now 10</div></div>
           </div>
         </div>
       </div>
@@ -691,20 +699,20 @@
   </section>
 
   <section data-screen-label="Referred Evidence">
-    <div class="edge">referred by third parties</div>
+    <div class="edge">entity &amp; brand building</div>
     <div class="card">
-      <div class="c-top"><span>How it works</span><span class="trk aeo">SEO &amp; AEO</span><span>14</span></div>
+      <div class="c-top"><span>Entity &amp; brand building</span><span class="trk aeo">SEO &amp; AEO</span><span>14</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1.25fr; gap:70px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
-            <h2>AI copies these sites.<br/>So we get you on them.</h2>
-            <p class="lede">Models rarely invent a recommendation. They repeat what directories, editorial roundups and review platforms already say.</p>
-            <div class="callout">Get onto those pages and you get into the answer.</div>
-            <p class="what">Where we place clients:</p>
+            <h2>AI cites and trusts<br/>these sites.</h2>
+            <p class="lede">A model does not invent a recommendation. It draws on the directories, editorial guides and review platforms it already trusts — so we work out which ones matter in your category, and get you onto them.</p>
+            <div class="callout">We build your brand where the machines are already reading.</div>
+            <p class="what">How we do it:</p>
             <ul class="b">
-              <li>Category directories and &ldquo;best of&rdquo; guides</li>
-              <li>Review platforms with real booking volume</li>
-              <li>Editorial placements on DR 50+ publications</li>
+              <li><b>Build the entity.</b> One consistent identity across every profile, listing and mention, so the models recognise you as a real business</li>
+              <li><b>Shortlist the sources that count.</b> We find which sites AI actually cites in your category, then rank them by how reachable they are</li>
+              <li><b>Earn the placement.</b> Directories, editorial guides and review platforms — each one chosen because it sends real visitors, not just a link</li>
             </ul>
           </div>
           <div class="panel" style="padding:28px;">
@@ -721,7 +729,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Referred</span><span class="rt">Client names redacted</span></div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Entity &amp; brand building</span><span class="rt">Client names redacted</span></div>
     </div>
   </section>
 
@@ -822,39 +830,85 @@
   </section>
 
   <!-- 13 PERFORMANCE ADVERTISING -->
-  <section data-screen-label="13 Performance Advertising">
-    <div class="edge">performance advertising</div>
+  <section data-screen-label="Performance Intro">
+    <div class="edge">performance marketing</div>
     <div class="card">
-      <div class="c-top"><span>Performance advertising</span><span class="trk perf">Performance Marketing</span><span>18</span></div>
+      <div class="c-top"><span>Part two</span><span class="trk perf">Performance Marketing</span><span>18</span></div>
       <div class="stage">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px; margin-bottom:6px;">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:90px; flex:1; min-height:0; align-items:center;">
           <div>
-            <h2>We report the cost of<br/>one customer.</h2>
-            <p class="lede">Google Ads, Performance Max and Meta, across restaurants, hospitality and venues in Bangkok and Pattaya.</p>
+            <div style="font-size:17px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:#2c4a72; margin-bottom:24px;">Part two</div>
+            <h2 class="lg">Now onto our<br/>performance marketing.</h2>
+            <p class="lede">Everything before this page was earned. This is the part we pay for — and it runs on the same rule: we report the cost of one customer, not the cost of a click.</p>
+            <div class="callout">Search and AI build the demand. Ads capture it while that is still growing.</div>
           </div>
-          <div class="callout" style="margin:0; flex-shrink:0; max-width:400px;">Conversion tracking is configured before a single baht is spent.</div>
-        </div>
-        <div style="display:grid; grid-template-columns: 1.05fr 0.5fr 0.5fr 0.5fr; gap:20px; flex:1; min-height:0;">
-          <div class="stats" style="grid-template-columns: 1fr 1fr; align-content:center;">
-            <div class="stat"><div class="n">2,608%</div><div class="l">Return on ad spend — <b>฿26 returned per ฿1</b></div></div>
-            <div class="stat"><div class="n">฿4.34</div><div class="l">Cost per customer — <b>952 in one month</b> on a ฿4,000 budget</div></div>
-            <div class="stat plain"><div class="n">฿16.45</div><div class="l">Cost per conversion — <b>a third</b> of the restaurant benchmark</div></div>
-            <div class="stat plain"><div class="n">5,291</div><div class="l">Direct hotel enquiries, each <b>avoiding OTA commission</b></div></div>
-          </div>
-          <div class="fig" onclick="lb('images/indian-restaurant/pmaxptydec.jpg')">
-            <img src="images/indian-restaurant/pmaxptydec.jpg" alt="Performance Max return on ad spend" />
-            <div class="fc"><div class="ft">Performance Max</div><div class="fd"><b>2,608% ROAS.</b> 60% of conversions from Maps.</div></div>
-          </div>
-          <div class="fig" onclick="lb('images/italian-restaurant/channel-flow.jpg')">
-            <img src="images/italian-restaurant/channel-flow.jpg" alt="Channel attribution" />
-            <div class="fc"><div class="ft">Channel attribution</div><div class="fd"><b>71% from Maps</b>, at ฿12.86 per direction request.</div></div>
-          </div>
-          <div class="fig" onclick="lb('images/bar-venue/search-intent.jpg')"><img src="images/bar-venue/search-intent.jpg" alt="Search intent" />
-            <div class="fc"><div class="ft">Search intent</div><div class="fd"><b>34+ customers</b> a month from near-me searches.</div></div>
+          <div class="stats" style="grid-template-columns:1fr 1fr;">
+            <div class="stat plain"><div class="n">Google Ads</div><div class="l">Search, Maps and Performance Max — for the customer already looking for you</div></div>
+            <div class="stat plain"><div class="n">Meta</div><div class="l">Facebook and Instagram — for the customer who did not know you existed</div></div>
+            <div class="stat"><div class="n">6</div><div class="l">Sectors we run paid media in — <b>hotels, restaurants, bars, clinics, property and events</b></div></div>
+            <div class="stat"><div class="n">฿0</div><div class="l">Spent before conversion tracking is live and <b>verified against the client's own bookings</b></div></div>
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Performance advertising</span><span class="rt">Source · Google Ads &amp; Meta Ads Manager</span></div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Performance marketing</span><span class="rt">Part two of two</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Google Ads">
+    <div class="edge">google ads</div>
+    <div class="card">
+      <div class="c-top"><span>Google Ads</span><span class="trk perf">Performance Marketing</span><span>19</span></div>
+      <div class="stage">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
+          <div>
+            <h2>Google Ads: catching<br/>people mid-decision.</h2>
+            <p class="lede">Search, Maps and Performance Max, for businesses where the customer is already looking — restaurants, bars and venues across Bangkok and Pattaya.</p>
+          </div>
+          <div class="callout" style="margin:0; flex-shrink:0; max-width:400px;">Maps is where the money is. It routinely drives 60–71% of all conversions.</div>
+        </div>
+        <div style="display:grid; grid-template-columns: 1.15fr 0.55fr 0.55fr; gap:22px; flex:1; min-height:0;">
+          <div class="stats" style="grid-template-columns: 1fr 1fr; align-content:center;">
+            <div class="stat"><div class="n">2,608%</div><div class="l">Return on ad spend for an <b>Indian restaurant</b> — ฿26 back for every ฿1<span class="src">Source · Google Ads</span></div></div>
+            <div class="stat"><div class="n">฿4.34</div><div class="l">Cost per customer at a second <b>restaurant</b> — 952 in one month on ฿4,000<span class="src">Source · Google Ads</span></div></div>
+            <div class="stat plain"><div class="n">฿16.45</div><div class="l">Cost per conversion at a <b>fine-dining restaurant</b> — a third of the sector benchmark<span class="src">Source · Google Ads</span></div></div>
+            <div class="stat plain"><div class="n">34+</div><div class="l">Paying customers a month for a <b>bar and live-music venue</b>, from near-me search alone<span class="src">Source · Google Ads</span></div></div>
+          </div>
+            <div class="shot" onclick="lb('images/indian-restaurant/pmaxptydec.jpg')"><img src="images/indian-restaurant/pmaxptydec.jpg" alt="Performance Max" />
+              <div class="cap"><div class="t">Performance Max</div><div class="d"><b>2,608% ROAS.</b> 60% of conversions from Maps.</div></div></div>
+            <div class="shot" onclick="lb('images/italian-restaurant/channel-flow.jpg')"><img src="images/italian-restaurant/channel-flow.jpg" alt="Channel attribution" />
+              <div class="cap"><div class="t">Channel attribution</div><div class="d"><b>71% from Maps</b>, at ฿12.86 per direction request.</div></div></div>
+        </div>
+      </div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Google Ads</span><span class="rt">Source · Google Ads · client names withheld</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Meta Ads">
+    <div class="edge">meta ads</div>
+    <div class="card">
+      <div class="c-top"><span>Meta Ads</span><span class="trk perf">Performance Marketing</span><span>20</span></div>
+      <div class="stage">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
+          <div>
+            <h2>Meta: taking bookings<br/>back from the OTAs.</h2>
+            <p class="lede">Facebook and Instagram, for demand that has not started searching yet. Our longest-running paid account is a four-star hotel in Pattaya.</p>
+          </div>
+          <div class="callout" style="margin:0; flex-shrink:0; max-width:410px;">Every direct booking is a booking the hotel keeps 15–20% more of.</div>
+        </div>
+        <div style="display:grid; grid-template-columns: 1.15fr 0.62fr 0.62fr; gap:22px; flex:1; min-height:0;">
+          <div class="stats" style="grid-template-columns: 1fr 1fr; align-content:center;">
+            <div class="stat"><div class="n">6 figures</div><div class="l">Added in <b>direct booking revenue</b> for a four-star hotel — booked on its own channel, not through an OTA<span class="src">Source · Meta Ads Manager &amp; client bookings</span></div></div>
+            <div class="stat"><div class="n">5:1</div><div class="l">Average return on ad spend across the campaign&rsquo;s <b>eighteen months</b><span class="src">Source · Meta Ads Manager</span></div></div>
+            <div class="stat plain"><div class="n">5,291</div><div class="l">Direct guest enquiries generated, <b>every one bypassing OTA commission</b><span class="src">Source · Meta Ads Manager</span></div></div>
+            <div class="stat plain"><div class="n">15–20%</div><div class="l">Commission the hotel no longer pays on those bookings — <b>margin, not just revenue</b><span class="src">Source · Client</span></div></div>
+          </div>
+            <div class="shot" onclick="lb('images/bar-pattaya/meta-ad-results.jpg')"><img src="images/bar-pattaya/meta-ad-results.jpg" alt="Meta Ads Manager" />
+              <div class="cap"><div class="t">Meta · bar &amp; restaurant</div><div class="d">Messaging campaign — conversations, cost per conversation and spend.</div></div></div>
+            <div class="shot" onclick="lb('images/indian-restaurant/meta-nov.jpg')"><img src="images/indian-restaurant/meta-nov.jpg" alt="Meta Ads Manager" />
+              <div class="cap"><div class="t">Meta · restaurant group</div><div class="d">Messaging and traffic — <b>฿1.84</b> per link click.</div></div></div>
+        </div>
+      </div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Meta Ads</span><span class="rt">Source · Meta Ads Manager · screenshots from other Meta accounts</span></div>
     </div>
   </section>
 
@@ -865,7 +919,7 @@
   <section data-screen-label="14 Testimonial">
     <div class="edge">client testimonial</div>
     <div class="card">
-      <div class="c-top"><span>Client testimonial</span><span>19</span></div>
+      <div class="c-top"><span>Client testimonial</span><span>21</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:80px; flex:1; min-height:0; align-items:stretch;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -888,7 +942,7 @@
   <section data-screen-label="15 Reviews">
     <div class="edge">client reviews</div>
     <div class="card">
-      <div class="c-top"><span>Client reviews</span><span>20</span></div>
+      <div class="c-top"><span>Client reviews</span><span>22</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px; margin-bottom:6px;">
           <div>
@@ -912,7 +966,7 @@
   <section data-screen-label="16 Contact">
     <div class="edge">next step</div>
     <div class="card">
-      <div class="c-top"><span>Contact</span><span>21</span></div>
+      <div class="c-top"><span>Contact</span><span>23</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:90px; flex:1; min-height:0; align-items:center;">
           <div>
@@ -956,7 +1010,10 @@
   for (const [id, vals] of Object.entries(SERIES)) {
     const el = document.getElementById(id);
     el.innerHTML = vals.map((v, i) => {
-      const cls = i === 0 ? ' class="f"' : (i === vals.length - 1 ? ' class="l"' : '');
+      const mx = Math.max(...vals);
+      const cls = vals[i] === mx && vals.indexOf(mx) === i ? ' class="pk"'
+                : i === 0 ? ' class="f"'
+                : i === vals.length - 1 ? ' class="l"' : '';
       return '<i' + cls + ' style="height:' + Math.max(v / 90 * 100, 4) + '%" title="' + v + '%"></i>';
     }).join('');
   }
