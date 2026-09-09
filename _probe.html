@@ -13,7 +13,7 @@
     --card:     #ffffff;
     --ink:      #14213d;
     --body:     #4f5a75;
-    --muted:    #6a7488;
+    --muted:    #8b93a6;
     --accent:   #e26a2c;
     --accent-d: #c2521a;
     --tint:     #fdf1e9;
@@ -944,5 +944,29 @@
 
 <script src="deck-stage.js"></script>
 <script src="https://widget.senja.io/widget/e78045b1-0c17-4032-ae66-d945b9ace7b2/platform.js" type="text/javascript" async></script>
-</body>
+<script>
+window.addEventListener('load',()=>{setTimeout(()=>{
+  const out=[];
+  document.querySelectorAll('deck-stage > section').forEach((sec,i)=>{
+    const label=sec.getAttribute('data-screen-label');
+    const sr=sec.getBoundingClientRect();
+    const bot=sec.querySelector('.c-bot');
+    const botTop=bot?bot.getBoundingClientRect().top:sr.bottom;
+    const bad=[];
+    sec.querySelectorAll('.stage *').forEach(el=>{
+      if(!el.getClientRects().length) return;
+      const r=el.getBoundingClientRect();
+      if(r.height<4||r.width<4) return;
+      if(r.bottom>botTop-6) bad.push((el.className||el.tagName)+'|ov'+Math.round(r.bottom-(botTop-6)));
+      if(r.right>sr.right-60) bad.push((el.className||el.tagName)+'|right');
+    });
+    // scroll overflow inside any flex/grid child
+    sec.querySelectorAll('.stage, .stage > *').forEach(el=>{
+      if(el.scrollHeight>el.clientHeight+4) bad.push((el.className||el.tagName)+'|scroll+'+(el.scrollHeight-el.clientHeight));
+    });
+    if(bad.length) out.push(label+' :: '+[...new Set(bad)].slice(0,6).join(' , '));
+  });
+  document.title='PROBE::'+(out.length?out.join(' ;; '):'ALL CLEAR');
+},1200)});
+</script></body>
 </html>
