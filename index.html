@@ -116,6 +116,13 @@
   }
   .stat .src { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(20,33,61,.09); }
 
+  .qa { border-top: 1px solid var(--rule); padding: 13px 0; }
+  .qa:first-of-type { border-top: none; padding-top: 4px; }
+  .qa .q { font-size: 20px; font-weight: 700; color: var(--ink); letter-spacing: -.01em; margin-bottom: 5px; }
+  .qa .q span { color: var(--accent-d); }
+  .qa .a { font-size: 17px; line-height: 1.45; color: var(--body); }
+  .qa .a b { font-weight: 500; color: var(--ink); }
+
   .what { font-size: 19px; font-weight: 500; color: var(--ink); margin: 0 0 16px; }
 
   ul.b { list-style: none; margin: 0; padding: 0; }
@@ -401,7 +408,7 @@
             <div style="font-size:24px; font-weight:700; letter-spacing:-.02em; margin-bottom:8px; color:var(--ink);">Review sites and guides list you</div>
             <p style="font-size:16px; line-height:1.45; color:var(--body); margin:0 0 16px;">AI reads directories and &ldquo;best of&rdquo; guides before it answers. We get you onto them.</p>
             <div class="shot" onclick="lb('images/referred/editorial-roundup.jpg')" style="flex:1; min-height:0;"><img src="images/referred/editorial-roundup.jpg" alt="Editorial roundup" style="object-fit:contain;background:#fff" />
-              <div class="cap"><div class="t">Editorial roundup</div><div class="d">Named <b>first</b> of five clinics in a published guide.</div></div></div>
+              <div class="cap"><div class="t">Editorial roundup</div><div class="d">Named <b>first</b> in a published guide.</div></div></div>
           </div>
         </div>
       </div>
@@ -415,20 +422,28 @@
 
   <!-- 04 MEASUREMENT -->
   <section data-screen-label="04 Measurement">
-    <div class="edge">you can see everything</div>
+    <div class="edge">your own dashboard</div>
     <div class="card">
       <div class="c-top"><span>Measurement</span><span class="trk aeo">SEO &amp; AEO</span><span>06</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 0.82fr 1.35fr; gap:60px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
-            <h2>You see everything<br/>we see.</h2>
-            <p class="lede">Every client gets a login to the same dashboard we work from. Not a monthly PDF.</p>
-            <div class="callout">If a number looks wrong, open the answer and check it yourself.</div>
-            <ul class="b">
-              <li><b>Updated every 72 hours</b>, automatically</li>
-              <li><b>Every competitor</b> named next to you, on every run</li>
-              <li><b>The full AI answer</b> stored, word for word</li>
-            </ul>
+            <h2>Your own AI visibility<br/>dashboard.</h2>
+            <p class="lede" style="margin-bottom:18px;">Every client gets a login and checks their own AI visibility whenever they want. Not a monthly PDF.</p>
+            <div class="callout">It answers the three questions every owner actually asks.</div>
+            <div class="qa">
+              <div class="q"><span>a.</span> Are we getting cited?</div>
+              <div class="a">Which of your pages AI is pulling from, how often, and on which questions.</div>
+            </div>
+            <div class="qa">
+              <div class="q"><span>b.</span> Are we getting mentioned?</div>
+              <div class="a">Whether the model says your name, <b>where in the answer</b>, and who is listed beside you.</div>
+            </div>
+            <div class="qa">
+              <div class="q"><span>c.</span> Is it leading to enquiries?</div>
+              <div class="a">Read alongside your analytics, so AI visits are tied to <b>calls, forms and bookings</b>.</div>
+            </div>
+            <p class="lede" style="font-size:16px; margin-top:14px;">Updated every 72 hours. The full answer text is stored, so any number can be checked at source.</p>
           </div>
           <div class="panel" style="padding:30px;">
             <div class="shot" style="flex:1; min-height:0;" onclick="lb('images/wellness/ai-visibility-dashboard.jpg')">
@@ -438,7 +453,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Measurement</span><span class="rt">Example client view</span></div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Your dashboard</span><span class="rt">Example client view · updated every 72 hours</span></div>
     </div>
   </section>
 
@@ -524,43 +539,43 @@
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px; margin-bottom:8px;">
           <div>
             <h2>Where AI puts our<br/>clients: top three.</h2>
-            <p class="lede">Read as <b>position / providers named</b>. A reading of 1/16 means named first among sixteen clinics in that answer.</p>
+            <p class="lede">Where the client is named in the AI's answer, on their best run so far. <b>#1 means named before anyone else.</b></p>
           </div>
           <div class="callout" style="margin:0; flex-shrink:0; max-width:400px;">40 prompts have placed top three. 24 of them at number one.</div>
         </div>
         <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:22px; flex:1; align-content:center;">
           <div class="pcol">
             <h4>Physiotherapy &amp; TCM</h4>
-            <div class="prow"><span>Lymphatic drainage after liposuction</span><span class="rk">1<span>/17</span></span></div>
-            <div class="prow"><span>Best acupuncture in Bangkok for pain relief</span><span class="rk">1<span>/15</span></span></div>
-            <div class="prow"><span>Best acupuncture clinic in Bangkok</span><span class="rk">1<span>/13</span></span></div>
-            <div class="prow"><span>Best cupping therapy in Bangkok</span><span class="rk">1<span>/13</span></span></div>
-            <div class="prow"><span>Best physiotherapy clinic in Bangkok</span><span class="rk">1<span>/12</span></span></div>
-            <div class="prow"><span>Compare physiotherapy clinics in Bangkok</span><span class="rk">1<span>/12</span></span></div>
-            <div class="prow"><span>Best physiotherapist in Bangkok</span><span class="rk">1<span>/10</span></span></div>
-            <div class="prow"><span>Best physio clinic for sports injuries</span><span class="rk">1<span>/10</span></span></div>
+            <div class="prow"><span>Lymphatic drainage after liposuction</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Best acupuncture in Bangkok for pain relief</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Best acupuncture clinic in Bangkok</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Best cupping therapy in Bangkok</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Best physiotherapy clinic in Bangkok</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Compare physiotherapy clinics in Bangkok</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Best physiotherapist in Bangkok</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Best physio clinic for sports injuries</span><span class="rk">#1</span></div>
           </div>
           <div class="pcol">
             <h4>Fertility &amp; IVF</h4>
-            <div class="prow"><span>Best fertility clinic in Bangkok for foreigners</span><span class="rk">1<span>/19</span></span></div>
-            <div class="prow"><span>Best IVF clinic in Bangkok</span><span class="rk">1<span>/18</span></span></div>
-            <div class="prow"><span>Best fertility clinic in Thailand</span><span class="rk">1<span>/18</span></span></div>
-            <div class="prow"><span>Best place for egg freezing in Bangkok</span><span class="rk">1<span>/17</span></span></div>
-            <div class="prow"><span>Egg freezing Bangkok price</span><span class="rk">1<span>/17</span></span></div>
-            <div class="prow"><span>Best IUI clinic in Bangkok</span><span class="rk">1<span>/16</span></span></div>
-            <div class="prow"><span>Affordable IVF in Bangkok</span><span class="rk">1<span>/16</span></span></div>
-            <div class="prow"><span>IVF success rates Bangkok</span><span class="rk">1<span>/15</span></span></div>
+            <div class="prow"><span>Best fertility clinic in Bangkok for foreigners</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Best IVF clinic in Bangkok</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Best fertility clinic in Thailand</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Best place for egg freezing in Bangkok</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Egg freezing Bangkok price</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Best IUI clinic in Bangkok</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Affordable IVF in Bangkok</span><span class="rk">#1</span></div>
+            <div class="prow"><span>IVF success rates Bangkok</span><span class="rk">#1</span></div>
           </div>
           <div class="pcol">
             <h4>Aesthetics</h4>
-            <div class="prow"><span>Best Ultherapy clinic in Bangkok</span><span class="rk">1<span>/16</span></span></div>
-            <div class="prow"><span>Best filler clinic in Bangkok</span><span class="rk">2<span>/14</span></span></div>
-            <div class="prow"><span>Beauty clinic Bangkok, tourists</span><span class="rk">2<span>/13</span></span></div>
-            <div class="prow"><span>Beauty clinic Bangkok, foreigners</span><span class="rk">2<span>/12</span></span></div>
-            <div class="prow"><span>Best aesthetic clinic near Pinklao</span><span class="rk">2<span>/12</span></span></div>
-            <div class="prow"><span>Beauty clinic Central Pinklao</span><span class="rk">3<span>/22</span></span></div>
-            <div class="prow"><span>Best lip filler clinic in Bangkok</span><span class="rk">3<span>/12</span></span></div>
-            <div class="prow"><span>Best Botox clinic in Bangkok</span><span class="rk">3<span>/8</span></span></div>
+            <div class="prow"><span>Best Ultherapy clinic in Bangkok</span><span class="rk">#1</span></div>
+            <div class="prow"><span>Best filler clinic in Bangkok</span><span class="rk">#2</span></div>
+            <div class="prow"><span>Beauty clinic Bangkok, tourists</span><span class="rk">#2</span></div>
+            <div class="prow"><span>Beauty clinic Bangkok, foreigners</span><span class="rk">#2</span></div>
+            <div class="prow"><span>Best aesthetic clinic near Pinklao</span><span class="rk">#2</span></div>
+            <div class="prow"><span>Beauty clinic Central Pinklao</span><span class="rk">#3</span></div>
+            <div class="prow"><span>Best lip filler clinic in Bangkok</span><span class="rk">#3</span></div>
+            <div class="prow"><span>Best Botox clinic in Bangkok</span><span class="rk">#3</span></div>
           </div>
         </div>
       </div>
@@ -583,13 +598,13 @@
         <div class="panel" style="flex:1; min-height:0; padding:28px;">
           <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:20px; height:100%;">
             <div class="shot" onclick="lb('images/wellness/chatgpt-best-physio.jpg')"><img src="images/wellness/chatgpt-best-physio.jpg" alt="ChatGPT" />
-              <div class="cap"><div class="t">ChatGPT</div><div class="d">&ldquo;Best physiotherapy clinic Bangkok&rdquo; — <b>1st of five</b> named.</div></div></div>
+              <div class="cap"><div class="t">ChatGPT</div><div class="d">&ldquo;Best physiotherapy clinic Bangkok&rdquo; — named <b>first</b>.</div></div></div>
             <div class="shot" onclick="lb('images/wellness/gemini-best-physio.jpg')"><img src="images/wellness/gemini-best-physio.jpg" alt="Google Gemini" />
               <div class="cap"><div class="t">Google Gemini</div><div class="d">&ldquo;Best physio clinic Thailand&rdquo; — <b>top of the table</b>.</div></div></div>
             <div class="shot" onclick="lb('images/aesthetic/aio-best-fillers.jpg')"><img src="images/aesthetic/aio-best-fillers.jpg" alt="Google AI Overview" style="object-fit:contain;background:#0d0d0d" />
-              <div class="cap"><div class="t">Google AI Overview</div><div class="d">&ldquo;Best fillers Bangkok&rdquo; — <b>1st</b> of five clinics.</div></div></div>
+              <div class="cap"><div class="t">Google AI Overview</div><div class="d">&ldquo;Best fillers Bangkok&rdquo; — named <b>first</b>.</div></div></div>
             <div class="shot" onclick="lb('images/wellness/chatgpt-ranked-1.jpg')"><img src="images/wellness/chatgpt-ranked-1.jpg" alt="ChatGPT ranked number one" />
-              <div class="cap"><div class="t">ChatGPT · ranked #1</div><div class="d">&ldquo;Top egg freezing packages in Bangkok&rdquo; — <b>rank 1</b> of five, on the platform's own scoring.</div></div></div>
+              <div class="cap"><div class="t">ChatGPT · ranked #1</div><div class="d">&ldquo;Top egg freezing packages in Bangkok&rdquo; — <b>rank 1</b>, on the platform's own scoring.</div></div></div>
           </div>
         </div>
       </div>
@@ -629,14 +644,14 @@
 
   <!-- 08 IVF DIAGNOSIS -->
   <section data-screen-label="08 IVF Diagnosis">
-    <div class="edge">case study · ivf clinic</div>
+    <div class="edge">audit findings</div>
     <div class="card">
       <div class="c-top"><span>Case study · IVF Clinic, Bangkok · SET-listed</span><span class="trk aeo">SEO &amp; AEO</span><span>12</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1.15fr; gap:80px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
-            <h2>A big clinic that AI<br/>could not see at all.</h2>
-            <p class="lede">A fertility clinic on the Stock Exchange of Thailand. 2,000+ patients a year, a 60–65% ICSI success rate, three branches and a seven-doctor team.</p>
+            <h2>Case study: client website<br/>audit findings.</h2>
+            <p class="lede">A fertility clinic listed on the Stock Exchange of Thailand — 2,000+ patients a year, a 60–65% ICSI success rate, three branches, seven doctors. It appeared in no AI answer on any engine. The audit found why.</p>
             <div class="callout">The cause was not the clinic. It was four lines in a configuration file.</div>
             <ul class="b">
               <li><b>Zero</b> AI answers on any engine</li>
@@ -658,7 +673,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Case study · Diagnosis</span><span class="rt">Baseline · June 2026</span></div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Audit findings</span><span class="rt">Baseline · June 2026</span></div>
     </div>
   </section>
 
@@ -673,7 +688,7 @@
             <h2>Two months later, AI<br/>mentions them <em>242</em> times.</h2>
             <p class="lede">From total absence on every engine to citation across six of them, with search performance following.</p>
           </div>
-          <div class="callout" style="margin:0; flex-shrink:0; max-width:400px;">August is a 28-day window against June's 30. The growth is understated.</div>
+          <div class="callout" style="margin:0; flex-shrink:0; max-width:400px;">Cited on six engines, from a standing start of zero.</div>
         </div>
         <div class="panel" style="flex:1; min-height:0; padding:32px;">
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; height:100%;">
@@ -705,45 +720,67 @@
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1.25fr; gap:70px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
-            <h2>AI cites and trusts<br/>these sites.</h2>
-            <p class="lede">A model does not invent a recommendation. It draws on the directories, editorial guides and review platforms it already trusts — so we work out which ones matter in your category, and get you onto them.</p>
-            <div class="callout">We build your brand where the machines are already reading.</div>
-            <p class="what">How we do it:</p>
+            <h2>We find the websites AI<br/>cites and trusts in your niche.</h2>
+            <p class="lede">A model does not invent a recommendation. It draws on the sites it already trusts. So the first job is finding out exactly which sites those are, in your category.</p>
+            <div class="callout">Be <b>in</b> the source AI trusts — or <b>be</b> the source.</div>
+            <p class="what">How the shortlist is built:</p>
             <ul class="b">
-              <li><b>Build the entity.</b> One consistent identity across every profile, listing and mention, so the models recognise you as a real business</li>
-              <li><b>Shortlist the sources that count.</b> We find which sites AI actually cites in your category, then rank them by how reachable they are</li>
-              <li><b>Earn the placement.</b> Directories, editorial guides and review platforms — each one chosen because it sends real visitors, not just a link</li>
+              <li>Run your real customer questions through the engines and record <b>every domain they cite</b></li>
+              <li>Rank those domains by how often they appear and <b>how reachable they are</b></li>
+              <li>Score each one on whether it sends <b>real visitors</b>, not just a link</li>
             </ul>
           </div>
           <div class="panel" style="padding:28px;">
-            <div style="display:grid; grid-template-rows:1fr 1fr; gap:20px; height:100%;">
+            <div class="shot" style="flex:1;min-height:0;" onclick="lb('images/referred/sources-ai-cites.jpg')"><img src="images/referred/sources-ai-cites.jpg" alt="Domains AI cites in one category" style="object-fit:contain;object-position:top center;background:#fff" />
+              <div class="cap"><div class="t">Domains AI cites in one category</div><div class="d">Every site the engines quoted when answering this client&rsquo;s customer questions, ranked by how often. <b>The client&rsquo;s own domain sits at the top; the rest are the targets.</b></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Step one · find the sources</span><span class="rt">Client name redacted</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Get Listed">
+    <div class="edge">then we get you listed</div>
+    <div class="card">
+      <div class="c-top"><span>Entity &amp; brand building</span><span class="trk aeo">SEO &amp; AEO</span><span>15</span></div>
+      <div class="stage">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
+          <div>
+            <h2>Then we get you<br/>listed on them.</h2>
+            <p class="lede">Directories, editorial guides and review platforms — each placement earned on the sites the shortlist said actually matter.</p>
+          </div>
+          <div class="callout" style="margin:0; flex-shrink:0; max-width:400px;">Be <b>in</b> the source AI trusts — or <b>be</b> the source.</div>
+        </div>
+        <div class="panel" style="flex:1; min-height:0; padding:28px;">
+          <div style="display:grid; grid-template-rows:1fr 1fr; gap:20px; height:100%;">
             <div class="shot" onclick="lb('images/referred/directory-rank-1.jpg')"><img src="images/referred/directory-rank-1.jpg" alt="Category directory" />
               <div class="cap"><div class="t">Category directory</div><div class="d">Ranked <b>1st of 37</b> clinics in the Bangkok category.</div></div></div>
-              <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; min-height:0;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; min-height:0;">
             <div class="shot" onclick="lb('images/referred/editorial-roundup.jpg')"><img src="images/referred/editorial-roundup.jpg" alt="Editorial guide" style="object-fit:contain;background:#fff" />
-              <div class="cap"><div class="t">Editorial guide</div><div class="d">Named <b>first</b> of five recommended clinics.</div></div></div>
+              <div class="cap"><div class="t">Editorial guide</div><div class="d">Named <b>first</b> among the recommended clinics.</div></div></div>
             <div class="shot" onclick="lb('images/referred/aggregator-listing.jpg')"><img src="images/referred/aggregator-listing.jpg" alt="Medical-tourism aggregator" />
               <div class="cap"><div class="t">Medical-tourism aggregator</div><div class="d">Listed at <b>5.0</b>, beside the big hospital groups.</div></div></div>
-              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Entity &amp; brand building</span><span class="rt">Client names redacted</span></div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Step two · earn the placement</span><span class="rt">Client names redacted</span></div>
     </div>
   </section>
+
 
 
   <!-- 10 WELLNESS -->
   <section data-screen-label="10 Wellness Clinic">
     <div class="edge">case study · wellness clinic</div>
     <div class="card">
-      <div class="c-top"><span>Case study · Wellness Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>15</span></div>
+      <div class="c-top"><span>Case study · Wellness Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>16</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1.15fr; gap:80px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
-            <h2>Named first, ahead of<br/>the big hospitals.</h2>
-            <p class="lede">A category owned by Bumrungrad, Bangkok Hospital, Samitivej and Vejthani. An independent clinic had no route in through conventional search.</p>
+            <h2 class="sm">Success case study: outranking<br/>and outciting Bangkok&rsquo;s big hospitals.</h2>
+            <p class="lede">A category owned by Bumrungrad, Bangkok Hospital, Samitivej and Vejthani. An independent clinic had no route in through conventional search — so we took the AI answer instead.</p>
             <div class="callout">0 → 40 paid consultations a month, sourced from AI.</div>
             <ul class="b">
               <li><b>Five queries</b> where AI names the clinic first</li>
@@ -756,7 +793,7 @@
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; height:100%;">
               <div class="fig" onclick="lb('images/wellness/chatgpt-best-physio.jpg')">
                 <img src="images/wellness/chatgpt-best-physio.jpg" alt="ChatGPT best physiotherapy clinic Bangkok" />
-                <div class="fc"><div class="ft good">ChatGPT</div><div class="fd">&ldquo;Best physiotherapy clinic Bangkok&rdquo; — <b>named first</b>, above four named competitors.</div></div>
+                <div class="fc"><div class="ft good">ChatGPT</div><div class="fd">&ldquo;Best physiotherapy clinic Bangkok&rdquo; — <b>named first</b>, above every competitor listed.</div></div>
               </div>
               <div class="fig" onclick="lb('images/wellness/gemini-best-physio.jpg')">
                 <img src="images/wellness/gemini-best-physio.jpg" alt="Gemini best physio clinic Thailand" />
@@ -766,7 +803,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Case study · Wellness Clinic</span><span class="rt">Client name redacted · position intact</span></div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Success case study</span><span class="rt">Client name redacted · position intact</span></div>
     </div>
   </section>
 
@@ -774,7 +811,7 @@
   <section data-screen-label="11 Commercial Result">
     <div class="edge">what it is worth</div>
     <div class="card">
-      <div class="c-top"><span>Commercial result</span><span class="trk aeo">SEO &amp; AEO</span><span>16</span></div>
+      <div class="c-top"><span>Commercial result</span><span class="trk aeo">SEO &amp; AEO</span><span>17</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px;">
           <div>
@@ -800,7 +837,7 @@
   <section data-screen-label="12 Aesthetic Clinic">
     <div class="edge">case study · aesthetic clinic</div>
     <div class="card">
-      <div class="c-top"><span>Case study · Aesthetic Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>17</span></div>
+      <div class="c-top"><span>Case study · Aesthetic Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>18</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:80px; flex:1; min-height:0; align-items:stretch;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -820,7 +857,7 @@
           <div class="panel" style="padding:32px;">
             <div class="fig" style="flex:1; min-height:0;" onclick="lb('images/aesthetic/aio-best-fillers.jpg')">
               <img src="images/aesthetic/aio-best-fillers.jpg" alt="Google AI Overview best fillers Bangkok" style="object-fit:contain; background:#0d0d0d;" />
-              <div class="fc"><div class="ft good">Google AI Overview</div><div class="fd">&ldquo;Best fillers Bangkok&rdquo; — <b>named first</b> in the ranked list, ahead of four named clinics.</div></div>
+              <div class="fc"><div class="ft good">Google AI Overview</div><div class="fd">&ldquo;Best fillers Bangkok&rdquo; — <b>named first</b> in the ranked list.</div></div>
             </div>
           </div>
         </div>
@@ -833,7 +870,7 @@
   <section data-screen-label="Performance Intro">
     <div class="edge">performance marketing</div>
     <div class="card">
-      <div class="c-top"><span>Part two</span><span class="trk perf">Performance Marketing</span><span>18</span></div>
+      <div class="c-top"><span>Part two</span><span class="trk perf">Performance Marketing</span><span>19</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:90px; flex:1; min-height:0; align-items:center;">
           <div>
@@ -857,7 +894,7 @@
   <section data-screen-label="Google Ads">
     <div class="edge">google ads</div>
     <div class="card">
-      <div class="c-top"><span>Google Ads</span><span class="trk perf">Performance Marketing</span><span>19</span></div>
+      <div class="c-top"><span>Google Ads</span><span class="trk perf">Performance Marketing</span><span>20</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
           <div>
@@ -886,7 +923,7 @@
   <section data-screen-label="Meta Ads">
     <div class="edge">meta ads</div>
     <div class="card">
-      <div class="c-top"><span>Meta Ads</span><span class="trk perf">Performance Marketing</span><span>20</span></div>
+      <div class="c-top"><span>Meta Ads</span><span class="trk perf">Performance Marketing</span><span>21</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
           <div>
@@ -919,7 +956,7 @@
   <section data-screen-label="14 Testimonial">
     <div class="edge">client testimonial</div>
     <div class="card">
-      <div class="c-top"><span>Client testimonial</span><span>21</span></div>
+      <div class="c-top"><span>Client testimonial</span><span>22</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:80px; flex:1; min-height:0; align-items:stretch;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -942,7 +979,7 @@
   <section data-screen-label="15 Reviews">
     <div class="edge">client reviews</div>
     <div class="card">
-      <div class="c-top"><span>Client reviews</span><span>22</span></div>
+      <div class="c-top"><span>Client reviews</span><span>23</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px; margin-bottom:6px;">
           <div>
@@ -966,7 +1003,7 @@
   <section data-screen-label="16 Contact">
     <div class="edge">next step</div>
     <div class="card">
-      <div class="c-top"><span>Contact</span><span>23</span></div>
+      <div class="c-top"><span>Contact</span><span>24</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:90px; flex:1; min-height:0; align-items:center;">
           <div>
