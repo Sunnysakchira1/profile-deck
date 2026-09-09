@@ -57,18 +57,17 @@
     flex-shrink: 0;
   }
   .c-bot {
-    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+    display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 22px;
     padding: 26px 0 30px; margin-top: auto; flex-shrink: 0;
     font-size: 14px; font-weight: 500; letter-spacing: 0.16em;
     text-transform: uppercase; color: var(--muted);
   }
   .c-bot .mid { text-align: center; }
   .c-bot .rt { text-align: right; }
-  .mark {
-    width: 30px; height: 30px; border-radius: 50%; background: var(--ink);
-    position: relative; display: block;
-  }
-  .mark::after { content:''; position:absolute; inset:8px; border-radius:50%; background: var(--accent); }
+  .c-bot .rt { display: flex; align-items: center; justify-content: flex-end; gap: 24px; }
+  .c-bot .rt img { height: 26px; width: auto; display: block; }
+  .c-bot .lf { display: flex; align-items: center; gap: 18px; }
+  .c-bot .lf img { height: 26px; width: auto; display: block; }
 
   .trk {
     display: inline-block; padding: 7px 14px; border-radius: 999px;
@@ -115,6 +114,27 @@
     letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
   }
   .stat .src { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(20,33,61,.09); }
+
+  .chart { background: var(--tint-2); border-radius: var(--r); padding: 30px 34px 26px; display: flex; flex-direction: column; }
+  .chart .ct { font-size: 14px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .chart .cs { font-size: 20px; font-weight: 700; color: var(--ink); margin-top: 8px; letter-spacing: -.01em; }
+  .chart .plot { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr auto 1fr; gap: 26px; align-items: end; margin: 26px 0 0; }
+  .chart .bar { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+  .chart .bv { font-size: 30px; font-weight: 700; letter-spacing: -.03em; margin-bottom: 10px; }
+  .chart .bb { width: 100%; border-radius: 6px 6px 0 0; }
+  .chart .bar.lo .bv { color: var(--ink); }
+  .chart .bar.lo .bb { background: #b9bfcc; }
+  .chart .bar.hi .bv { color: var(--accent-d); font-size: 38px; }
+  .chart .bar.hi .bb { background: var(--accent); }
+  .chart .bl { font-size: 14px; font-weight: 500; color: var(--ink); margin-top: 12px; text-align: center; }
+  .chart .bl span { display: block; font-weight: 400; color: var(--muted); font-size: 12.5px; margin-top: 3px; }
+  .chart .mult { font-size: 19px; font-weight: 700; color: var(--accent-d); padding-bottom: 46px; white-space: nowrap; }
+  .chart .cf { font-size: 15px; line-height: 1.5; color: var(--body); border-top: 1px solid #ded9d1; padding-top: 16px; margin-top: 20px; }
+  .chart .cf b { color: var(--ink); font-weight: 500; }
+
+  .quote { background: var(--tint); border-radius: var(--r); padding: 28px 32px 30px; }
+  .quote .qt { font-size: 21px; line-height: 1.5; color: var(--accent-d); font-style: italic; }
+  .quote .qs { font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 16px; }
 
   .qa { border-top: 1px solid var(--rule); padding: 13px 0; }
   .qa:first-of-type { border-top: none; padding-top: 4px; }
@@ -243,7 +263,7 @@
   <section data-screen-label="01 Cover">
     <div class="edge">company profile</div>
     <div class="card">
-      <div class="c-top"><span>Locully · 2026</span><span>01</span></div>
+      <div class="c-top"><span style="display:flex;align-items:center;gap:16px;"><img src="images/brand/locully.png" alt="Locully" style="height:30px;width:auto;display:block;" /><span style="opacity:.75">Company Profile · 2026</span></span><span>01</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1.25fr 1fr; gap:90px; align-items:end;">
           <div>
@@ -275,7 +295,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Company Profile</span><span class="rt">Locully · 2026</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Company Profile</span></span><span class="rt"><span>Locully · 2026</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -317,7 +337,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">What we do</span><span class="rt">Locully Company Profile</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>What we do</span></span><span class="rt"><span>Locully Company Profile</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -347,7 +367,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">The shift</span><span class="rt">Locully Company Profile</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>The shift</span></span><span class="rt"><span>Locully Company Profile</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -363,23 +383,76 @@
           </div>
           <div class="callout" style="margin:0; flex-shrink:0; max-width:400px;">What arrives is a decision, not a browse.</div>
         </div>
-        <div class="stats" style="grid-template-columns: repeat(4,1fr); flex:1; align-content:center;">
-          <div class="stat"><div class="n">1 in 7</div><div class="l">Visitors sent by AI make an enquiry. From ordinary search it is <b>1 in 27</b> — same site, same month<span class="src">Source · Google Analytics 4</span></div></div>
-          <div class="stat"><div class="n">฿694K+</div><div class="l">Revenue from AI-sourced patients in six months, <b>every baht of it new</b> — the channel did not exist a year earlier<span class="src">Source · Client sales ledger</span></div></div>
-          <div class="stat plain"><div class="n">96%</div><div class="l">Of those patients had <b>never contacted the clinic before</b>. This is new demand, not existing customers changing route<span class="src">Source · Client sales ledger</span></div></div>
-          <div class="stat plain"><div class="n">+60%</div><div class="l">Enquiries from AI rose 60% in a month while <b>AI visits stayed flat</b>. Better visitors, not more of them<span class="src">Source · Google Analytics 4</span></div></div>
+        <div style="display:grid; grid-template-columns: 1.05fr 1.25fr; gap:26px; flex:1; min-height:0;">
+          <div class="chart">
+            <div class="ct">Session conversion rate</div>
+            <div class="cs">A visitor from AI against a visitor from Google</div>
+            <div class="plot">
+              <div class="bar lo"><div class="bv">3.7%</div><div class="bb" style="height:24%"></div><div class="bl">Organic search<span>Same site, same month</span></div></div>
+              <div class="mult">&rarr; 3.9&times;</div>
+              <div class="bar hi"><div class="bv">14.5%</div><div class="bb" style="height:94%"></div><div class="bl">AI referrals<span>1 in 7 makes an enquiry</span></div></div>
+            </div>
+            <div class="cf">A <b>rate</b>, not a volume story — it holds when a client checks it against their own analytics.<span class="src">Source · Google Analytics 4</span></div>
+          </div>
+          <div class="stats" style="grid-template-columns: 1fr 1fr; align-content:center;">
+            <div class="stat"><div class="n">฿694K+</div><div class="l">Revenue from AI-sourced patients in six months, <b>every baht of it new</b><span class="src">Source · Client sales ledger</span></div></div>
+            <div class="stat"><div class="n">0 → 40</div><div class="l">Paid consultations a month from a standing start. <b>Bookings, not enquiries</b><span class="src">Source · Client sales ledger</span></div></div>
+            <div class="stat plain"><div class="n">96%</div><div class="l">Of those patients had <b>never contacted the clinic before</b><span class="src">Source · Client sales ledger</span></div></div>
+            <div class="stat plain"><div class="n">+60%</div><div class="l">Enquiries from AI rose while <b>AI visits stayed flat</b><span class="src">Source · Google Analytics 4</span></div></div>
+          </div>
         </div>
-        <p class="lede" style="max-width:none; font-size:18px; margin-top:6px;">One client, reconciled against their own sales ledger and analytics. Anonymised at their request. Revenue is gross, not margin.</p>
+        <p class="lede" style="max-width:none; font-size:17px; margin-top:16px;">One client, reconciled against their own sales ledger and analytics. Anonymised at their request. Revenue is gross, not margin.</p>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Why it converts</span><span class="rt">One client · reconciled to their own ledger</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Why it converts</span></span><span class="rt"><span>One client · reconciled to their own ledger</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
+
+  <section data-screen-label="Smaller But Better">
+    <div class="edge">smaller, but better</div>
+    <div class="card">
+      <div class="c-top"><span>Why it matters</span><span class="trk aeo">SEO &amp; AEO</span><span>05</span></div>
+      <div class="stage">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:10px;">
+          <div>
+            <h2>AI traffic is smaller —<br/>and <em>far</em> more profitable.</h2>
+            <p class="lede">You will not get the volume Google sends. You get something better: people who have already made the decision and are confirming it.</p>
+          </div>
+          <div class="callout" style="margin:0; flex-shrink:0; max-width:390px;">A single AI mention is worth roughly <b>ten Google clicks</b> in real revenue.</div>
+        </div>
+        <div style="display:grid; grid-template-columns: 1.05fr 1fr; gap:26px; flex:1; min-height:0;">
+          <div class="chart">
+            <div class="ct">Booking conversion rate</div>
+            <div class="cs">A visitor from ChatGPT against a visitor from Google</div>
+            <div class="plot">
+              <div class="bar lo"><div class="bv">2.7%</div><div class="bb" style="height:16%"></div><div class="bl">Google organic<span>Industry average</span></div></div>
+              <div class="mult">&rarr; ~10&times;</div>
+              <div class="bar hi"><div class="bv">25–30%</div><div class="bb" style="height:92%"></div><div class="bl">ChatGPT referral<span>Locully client average</span></div></div>
+            </div>
+            <div class="cf">When ChatGPT names you, the visitor is not comparison-shopping. They are <b>confirming a choice the model already made for them</b>.</div>
+          </div>
+          <div style="display:flex; flex-direction:column; justify-content:center; gap:22px;">
+            <div class="quote">
+              <div class="qt">&ldquo;Just sold a treatment to an Arab woman who told me ChatGPT referred her to us.&rdquo;</div>
+              <div class="qs">Locully client · WhatsApp message</div>
+            </div>
+            <ul class="b">
+              <li>They arrive knowing your name, your price and why you were picked</li>
+              <li>No comparison tab open, no three other quotes being gathered</li>
+              <li>Which is why the conversion rate, not the visit count, is the number that matters</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Smaller, but better</span></span><span class="rt"><span>Industry average vs Locully client average</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
+    </div>
+  </section>
+
 
 
   <section data-screen-label="Three Outcomes">
     <div class="edge">cited · ranked · referred</div>
     <div class="card">
-      <div class="c-top"><span>The three outcomes</span><span class="trk aeo">SEO &amp; AEO</span><span>05</span></div>
+      <div class="c-top"><span>The three outcomes</span><span class="trk aeo">SEO &amp; AEO</span><span>06</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
           <div>
@@ -412,7 +485,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">The three outcomes</span><span class="rt">What we are actually selling</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>The three outcomes</span></span><span class="rt"><span>What we are actually selling</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -424,7 +497,7 @@
   <section data-screen-label="04 Measurement">
     <div class="edge">your own dashboard</div>
     <div class="card">
-      <div class="c-top"><span>Measurement</span><span class="trk aeo">SEO &amp; AEO</span><span>06</span></div>
+      <div class="c-top"><span>Measurement</span><span class="trk aeo">SEO &amp; AEO</span><span>07</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 0.82fr 1.35fr; gap:60px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -453,7 +526,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Your dashboard</span><span class="rt">Example client view · updated every 72 hours</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Your dashboard</span></span><span class="rt"><span>Example client view · updated every 72 hours</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -461,7 +534,7 @@
   <section data-screen-label="05 Two Engines">
     <div class="edge">two engines</div>
     <div class="card">
-      <div class="c-top"><span>Measurement</span><span class="trk aeo">SEO &amp; AEO</span><span>07</span></div>
+      <div class="c-top"><span>Measurement</span><span class="trk aeo">SEO &amp; AEO</span><span>08</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1.35fr; gap:80px; align-items:start;">
           <div>
@@ -491,7 +564,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Two engines</span><span class="rt">Source · Amplitude per-response exports · 25–30 Aug 2026</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Two engines</span></span><span class="rt"><span>Source · Amplitude per-response exports · 25–30 Aug 2026</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -499,7 +572,7 @@
   <section data-screen-label="06 Trend">
     <div class="edge">measured growth</div>
     <div class="card">
-      <div class="c-top"><span>Results</span><span class="trk aeo">SEO &amp; AEO</span><span>08</span></div>
+      <div class="c-top"><span>Results</span><span class="trk aeo">SEO &amp; AEO</span><span>09</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px;">
           <div>
@@ -526,7 +599,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Measured growth</span><span class="rt">Source · Locully tracker · 20 Jul – 31 Aug 2026</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Measured growth</span></span><span class="rt"><span>Source · Locully tracker · 20 Jul – 31 Aug 2026</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -534,7 +607,7 @@
   <section data-screen-label="07 Placements">
     <div class="edge">verified placements</div>
     <div class="card">
-      <div class="c-top"><span>Results</span><span class="trk aeo">SEO &amp; AEO</span><span>09</span></div>
+      <div class="c-top"><span>Results</span><span class="trk aeo">SEO &amp; AEO</span><span>10</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px; margin-bottom:8px;">
           <div>
@@ -579,14 +652,14 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Top-three placements</span><span class="rt">Source · Locully tracker · best of 16 runs, Jul–Aug 2026</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Top-three placements</span></span><span class="rt"><span>Source · Locully tracker · best of 16 runs, Jul–Aug 2026</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
   <section data-screen-label="Cited Evidence">
     <div class="edge">cited by AI</div>
     <div class="card">
-      <div class="c-top"><span>Evidence</span><span class="trk aeo">SEO &amp; AEO</span><span>10</span></div>
+      <div class="c-top"><span>Evidence</span><span class="trk aeo">SEO &amp; AEO</span><span>11</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
           <div>
@@ -608,14 +681,14 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Cited</span><span class="rt">Client names redacted · positions intact</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Cited</span></span><span class="rt"><span>Client names redacted · positions intact</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
   <section data-screen-label="What We Publish">
     <div class="edge">what gets quoted</div>
     <div class="card">
-      <div class="c-top"><span>How it works</span><span class="trk aeo">SEO &amp; AEO</span><span>11</span></div>
+      <div class="c-top"><span>How it works</span><span class="trk aeo">SEO &amp; AEO</span><span>12</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 0.85fr 1.3fr; gap:60px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -636,7 +709,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">What we publish</span><span class="rt">Client name redacted</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>What we publish</span></span><span class="rt"><span>Client name redacted</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -646,7 +719,7 @@
   <section data-screen-label="08 IVF Diagnosis">
     <div class="edge">audit findings</div>
     <div class="card">
-      <div class="c-top"><span>Case study · IVF Clinic, Bangkok · SET-listed</span><span class="trk aeo">SEO &amp; AEO</span><span>12</span></div>
+      <div class="c-top"><span>Case study · IVF Clinic, Bangkok · SET-listed</span><span class="trk aeo">SEO &amp; AEO</span><span>13</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1.15fr; gap:80px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -673,7 +746,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Audit findings</span><span class="rt">Baseline · June 2026</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Audit findings</span></span><span class="rt"><span>Baseline · June 2026</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -681,7 +754,7 @@
   <section data-screen-label="09 IVF Result">
     <div class="edge">case study · ivf clinic</div>
     <div class="card">
-      <div class="c-top"><span>Case study · IVF Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>13</span></div>
+      <div class="c-top"><span>Case study · IVF Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>14</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px; margin-bottom:6px;">
           <div>
@@ -709,14 +782,14 @@
           <div class="stat" style="padding:22px 26px 24px;"><div class="n" style="font-size:38px;">72%</div><div class="l" style="margin-top:10px;">Prompts naming the clinic</div></div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Case study · Result</span><span class="rt">Sources · Ahrefs &amp; Google Search Console</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Case study · Result</span></span><span class="rt"><span>Sources · Ahrefs &amp; Google Search Console</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
   <section data-screen-label="Referred Evidence">
     <div class="edge">entity &amp; brand building</div>
     <div class="card">
-      <div class="c-top"><span>Entity &amp; brand building</span><span class="trk aeo">SEO &amp; AEO</span><span>14</span></div>
+      <div class="c-top"><span>Entity &amp; brand building</span><span class="trk aeo">SEO &amp; AEO</span><span>15</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1.25fr; gap:70px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -736,14 +809,14 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Step one · find the sources</span><span class="rt">Client name redacted</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Step one · find the sources</span></span><span class="rt"><span>Client name redacted</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
   <section data-screen-label="Get Listed">
     <div class="edge">then we get you listed</div>
     <div class="card">
-      <div class="c-top"><span>Entity &amp; brand building</span><span class="trk aeo">SEO &amp; AEO</span><span>15</span></div>
+      <div class="c-top"><span>Entity &amp; brand building</span><span class="trk aeo">SEO &amp; AEO</span><span>16</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
           <div>
@@ -765,7 +838,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Step two · earn the placement</span><span class="rt">Client names redacted</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Step two · earn the placement</span></span><span class="rt"><span>Client names redacted</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -775,7 +848,7 @@
   <section data-screen-label="10 Wellness Clinic">
     <div class="edge">case study · wellness clinic</div>
     <div class="card">
-      <div class="c-top"><span>Case study · Wellness Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>16</span></div>
+      <div class="c-top"><span>Case study · Wellness Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>17</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1.15fr; gap:80px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -803,7 +876,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Success case study</span><span class="rt">Client name redacted · position intact</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Success case study</span></span><span class="rt"><span>Client name redacted · position intact</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -811,7 +884,7 @@
   <section data-screen-label="11 Commercial Result">
     <div class="edge">what it is worth</div>
     <div class="card">
-      <div class="c-top"><span>Commercial result</span><span class="trk aeo">SEO &amp; AEO</span><span>17</span></div>
+      <div class="c-top"><span>Commercial result</span><span class="trk aeo">SEO &amp; AEO</span><span>18</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px;">
           <div>
@@ -829,7 +902,7 @@
           <div class="stat plain"><div class="n">22–30%</div><div class="l">Of total clinic revenue now attributable to <b>search and AI</b></div></div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Commercial result</span><span class="rt">Sources · sales ledger, GA4, GSC · gross revenue</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Commercial result</span></span><span class="rt"><span>Sources · sales ledger, GA4, GSC · gross revenue</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -837,7 +910,7 @@
   <section data-screen-label="12 Aesthetic Clinic">
     <div class="edge">case study · aesthetic clinic</div>
     <div class="card">
-      <div class="c-top"><span>Case study · Aesthetic Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>18</span></div>
+      <div class="c-top"><span>Case study · Aesthetic Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>19</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:80px; flex:1; min-height:0; align-items:stretch;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -862,7 +935,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Case study · Aesthetic Clinic</span><span class="rt">No paid advertising</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Case study · Aesthetic Clinic</span></span><span class="rt"><span>No paid advertising</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -870,7 +943,7 @@
   <section data-screen-label="Performance Intro">
     <div class="edge">performance marketing</div>
     <div class="card">
-      <div class="c-top"><span>Part two</span><span class="trk perf">Performance Marketing</span><span>19</span></div>
+      <div class="c-top"><span>Part two</span><span class="trk perf">Performance Marketing</span><span>20</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:90px; flex:1; min-height:0; align-items:center;">
           <div>
@@ -887,14 +960,14 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Performance marketing</span><span class="rt">Part two of two</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Performance marketing</span></span><span class="rt"><span>Part two of two</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
   <section data-screen-label="Google Ads">
     <div class="edge">google ads</div>
     <div class="card">
-      <div class="c-top"><span>Google Ads</span><span class="trk perf">Performance Marketing</span><span>20</span></div>
+      <div class="c-top"><span>Google Ads</span><span class="trk perf">Performance Marketing</span><span>21</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
           <div>
@@ -916,14 +989,14 @@
               <div class="cap"><div class="t">Channel attribution</div><div class="d"><b>71% from Maps</b>, at ฿12.86 per direction request.</div></div></div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Google Ads</span><span class="rt">Source · Google Ads · client names withheld</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Google Ads</span></span><span class="rt"><span>Source · Google Ads · client names withheld</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
   <section data-screen-label="Meta Ads">
     <div class="edge">meta ads</div>
     <div class="card">
-      <div class="c-top"><span>Meta Ads</span><span class="trk perf">Performance Marketing</span><span>21</span></div>
+      <div class="c-top"><span>Meta Ads</span><span class="trk perf">Performance Marketing</span><span>22</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
           <div>
@@ -945,7 +1018,7 @@
               <div class="cap"><div class="t">Meta · restaurant group</div><div class="d">Messaging and traffic — <b>฿1.84</b> per link click.</div></div></div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Meta Ads</span><span class="rt">Source · Meta Ads Manager · screenshots from other Meta accounts</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Meta Ads</span></span><span class="rt"><span>Source · Meta Ads Manager · screenshots from other Meta accounts</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -956,7 +1029,7 @@
   <section data-screen-label="14 Testimonial">
     <div class="edge">client testimonial</div>
     <div class="card">
-      <div class="c-top"><span>Client testimonial</span><span>22</span></div>
+      <div class="c-top"><span>Client testimonial</span><span>23</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:80px; flex:1; min-height:0; align-items:stretch;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -971,7 +1044,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Client testimonial</span><span class="rt">Verified · Senja</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Client testimonial</span></span><span class="rt"><span>Verified · Senja</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -979,7 +1052,7 @@
   <section data-screen-label="15 Reviews">
     <div class="edge">client reviews</div>
     <div class="card">
-      <div class="c-top"><span>Client reviews</span><span>23</span></div>
+      <div class="c-top"><span>Client reviews</span><span>24</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px; margin-bottom:6px;">
           <div>
@@ -995,7 +1068,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Client reviews</span><span class="rt">Google</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Client reviews</span></span><span class="rt"><span>Google</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
@@ -1003,7 +1076,7 @@
   <section data-screen-label="16 Contact">
     <div class="edge">next step</div>
     <div class="card">
-      <div class="c-top"><span>Contact</span><span>24</span></div>
+      <div class="c-top"><span>Contact</span><span>25</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:90px; flex:1; min-height:0; align-items:center;">
           <div>
@@ -1019,7 +1092,7 @@
           </div>
         </div>
       </div>
-      <div class="c-bot"><span class="mark"></span><span class="mid">Next step</span><span class="rt">Locully Company Profile · 2026</span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Next step</span></span><span class="rt"><span>Locully Company Profile · 2026</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
