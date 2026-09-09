@@ -69,8 +69,27 @@
   }
   .mark::after { content:''; position:absolute; inset:8px; border-radius:50%; background: var(--accent); }
 
+  .trk {
+    display: inline-block; padding: 7px 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    margin-left: 16px; vertical-align: middle;
+  }
+  .trk.aeo  { background: var(--tint);   color: var(--accent-d); }
+  .trk.perf { background: #e8eef6;       color: #2c4a72; }
+
+  /* clickable evidence */
+  .fig, .shot { cursor: zoom-in; transition: transform .18s, box-shadow .18s; }
+  .fig:hover, .shot:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(20,33,61,.13); }
+  .shot { background:#fff; border:1px solid var(--rule); border-radius: var(--r); overflow:hidden; display:flex; flex-direction:column; }
+  .shot img { width:100%; flex:1; min-height:0; object-fit:cover; object-position:top left; display:block; }
+  .shot .cap { padding:16px 18px 18px; border-top:1px solid var(--rule); flex-shrink:0; }
+  .shot .cap .t { font-size:13px; font-weight:500; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-bottom:7px; }
+  .shot .cap .d { font-size:16px; line-height:1.45; color:var(--body); }
+  .shot .cap .d b { color:var(--ink); font-weight:500; }
+
   /* the working area between chrome */
   .stage { flex: 1; display: flex; flex-direction: column; padding-top: 52px; min-height: 0; }
+  .stage > *, .panel, .shot, .fig, .stat, .eng, .pcol, .cbox, .dd .p { min-height: 0; min-width: 0; }
 
   h2 {
     font-size: 46px; font-weight: 700; line-height: 1.14;
@@ -207,14 +226,15 @@
         <div style="display:grid; grid-template-columns: 1.25fr 1fr; gap:90px; align-items:end;">
           <div>
             <div style="font-size:17px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent-d); margin-bottom:26px;">Bangkok · Thailand &amp; Southeast Asia · Est. 2024</div>
-            <h1 class="cover-h1">SEO and<br/><em>AI Visibility</em></h1>
-            <p class="lede" style="margin-top:34px; font-size:24px; max-width:700px;">We make businesses the answer AI search returns — cited by ChatGPT, Gemini and Google AI Overviews, and ranked on Google.</p>
+            <h1 class="cover-h1">SEO &amp; <em>AEO</em></h1>
+            <p class="lede" style="margin-top:30px; font-size:26px; max-width:720px; color:var(--ink); font-weight:500;">How we get businesses cited, ranked and referred by LLMs.</p>
+            <p class="lede" style="margin-top:16px; font-size:21px; max-width:700px;">Search engine optimisation and answer engine optimisation for Thailand and Southeast Asia — plus the performance advertising that runs alongside it.</p>
           </div>
           <div style="text-align:right; font-size:18px; line-height:2; color:var(--body);">
             <b style="color:var(--ink); font-weight:500;">LOCULLY.ORG</b><br/>
-            SEO &amp; AI Visibility<br/>
-            Local Lead Generation<br/>
-            Performance Advertising<br/>
+            SEO &amp; AEO<br/>
+            Answer Engine Optimisation<br/>
+            Performance Marketing<br/>
             <span style="color:var(--muted)">sunny@locully.org · +66 62 695 9444</span>
           </div>
         </div>
@@ -282,7 +302,7 @@
   <section data-screen-label="03 Market Context">
     <div class="edge">the shift</div>
     <div class="card">
-      <div class="c-top"><span>Market context</span><span>03</span></div>
+      <div class="c-top"><span>Market context</span><span class="trk aeo">SEO &amp; AEO</span><span>03</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:90px; flex:1; min-height:0; align-items:center;">
           <div>
@@ -308,11 +328,52 @@
     </div>
   </section>
 
+  <section data-screen-label="Three Outcomes">
+    <div class="edge">cited · ranked · referred</div>
+    <div class="card">
+      <div class="c-top"><span>The three outcomes</span><span class="trk aeo">SEO &amp; AEO</span><span>04</span></div>
+      <div class="stage">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
+          <div>
+            <h2>Cited, ranked and referred.</h2>
+            <p class="lede">Three different jobs. A business can win one and lose the other two, so we build and measure all three.</p>
+          </div>
+          <div class="callout" style="margin:0; flex-shrink:0; max-width:390px;">Most agencies sell the middle one and call it AI search.</div>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:24px; flex:1; min-height:0;">
+          <div class="panel" style="padding:26px; justify-content:flex-start;">
+            <div style="font-size:13px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-d); margin-bottom:10px;">01 · Cited</div>
+            <div style="font-size:24px; font-weight:700; letter-spacing:-.02em; margin-bottom:8px;">The model names you</div>
+            <p style="font-size:16px; line-height:1.45; color:var(--body); margin:0 0 16px;">ChatGPT, Gemini and Perplexity name your business inside the answer itself.</p>
+            <div class="shot" onclick="lb('images/wellness/chatgpt-best-physio.jpg')" style="flex:1; min-height:0;"><img src="images/wellness/chatgpt-best-physio.jpg" alt="ChatGPT" />
+              <div class="cap"><div class="t">ChatGPT</div><div class="d">Named <b>first</b> for &ldquo;best physiotherapy clinic Bangkok&rdquo;.</div></div></div>
+          </div>
+          <div class="panel plain" style="padding:26px; justify-content:flex-start;">
+            <div style="font-size:13px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:10px;">02 · Ranked</div>
+            <div style="font-size:24px; font-weight:700; letter-spacing:-.02em; margin-bottom:8px;">Google still sends traffic</div>
+            <p style="font-size:16px; line-height:1.45; color:var(--body); margin:0 0 16px;">Classic search remains the largest single source, and it feeds the AI layer above it.</p>
+            <div class="shot" onclick="lb('images/ivf-case/gsc-jun-vs-aug.jpg')" style="flex:1; min-height:0;"><img src="images/ivf-case/gsc-jun-vs-aug.jpg" alt="Search Console" />
+              <div class="cap"><div class="t">Search Console</div><div class="d">Impressions <b>15.8K &rarr; 153K</b> in two months.</div></div></div>
+          </div>
+          <div class="panel plain" style="padding:26px; justify-content:flex-start;">
+            <div style="font-size:13px; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:10px;">03 · Referred</div>
+            <div style="font-size:24px; font-weight:700; letter-spacing:-.02em; margin-bottom:8px;">Other sites vouch for you</div>
+            <p style="font-size:16px; line-height:1.45; color:var(--body); margin:0 0 16px;">Models read directories, roundups and reviews before they answer. We put you on them.</p>
+            <div class="shot" onclick="lb('images/referred/editorial-roundup.jpg')" style="flex:1; min-height:0;"><img src="images/referred/editorial-roundup.jpg" alt="Editorial roundup" style="object-fit:contain;background:#fff" />
+              <div class="cap"><div class="t">Editorial roundup</div><div class="d">Named <b>first</b> of five clinics in a published guide.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">The three outcomes</span><span class="rt">What we are actually selling</span></div>
+    </div>
+  </section>
+
+
   <!-- 04 MEASUREMENT -->
   <section data-screen-label="04 Measurement">
     <div class="edge">how we measure</div>
     <div class="card">
-      <div class="c-top"><span>Measurement</span><span>04</span></div>
+      <div class="c-top"><span>Measurement</span><span class="trk aeo">SEO &amp; AEO</span><span>05</span></div>
       <div class="stage">
         <h2>How we measure AI visibility.</h2>
         <p class="lede" style="max-width:1000px;">Every 72 hours we put each client's prompt set through live AI search and store the complete answer — who was named, in what order, and every competitor named alongside them.</p>
@@ -351,7 +412,7 @@
   <section data-screen-label="05 Two Engines">
     <div class="edge">two engines</div>
     <div class="card">
-      <div class="c-top"><span>Measurement</span><span>05</span></div>
+      <div class="c-top"><span>Measurement</span><span class="trk aeo">SEO &amp; AEO</span><span>06</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1.35fr; gap:80px; align-items:start;">
           <div>
@@ -389,7 +450,7 @@
   <section data-screen-label="06 Trend">
     <div class="edge">measured growth</div>
     <div class="card">
-      <div class="c-top"><span>Results</span><span>06</span></div>
+      <div class="c-top"><span>Results</span><span class="trk aeo">SEO &amp; AEO</span><span>07</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px;">
           <div>
@@ -424,7 +485,7 @@
   <section data-screen-label="07 Placements">
     <div class="edge">verified placements</div>
     <div class="card">
-      <div class="c-top"><span>Results</span><span>07</span></div>
+      <div class="c-top"><span>Results</span><span class="trk aeo">SEO &amp; AEO</span><span>08</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px; margin-bottom:8px;">
           <div>
@@ -469,11 +530,41 @@
     </div>
   </section>
 
+  <section data-screen-label="Cited Evidence">
+    <div class="edge">cited by AI</div>
+    <div class="card">
+      <div class="c-top"><span>Evidence</span><span class="trk aeo">SEO &amp; AEO</span><span>09</span></div>
+      <div class="stage">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
+          <div>
+            <h2>Cited: AI naming our clients first.</h2>
+            <p class="lede">Captured directly from the platforms. Client names redacted; the ranked position and every named competitor left intact.</p>
+          </div>
+          <div class="callout" style="margin:0; flex-shrink:0; max-width:360px;">Click any image to view it full size.</div>
+        </div>
+        <div class="panel" style="flex:1; min-height:0; padding:28px;">
+          <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:20px; height:100%;">
+            <div class="shot" onclick="lb('images/wellness/chatgpt-best-physio.jpg')"><img src="images/wellness/chatgpt-best-physio.jpg" alt="ChatGPT" />
+              <div class="cap"><div class="t">ChatGPT</div><div class="d">&ldquo;Best physiotherapy clinic Bangkok&rdquo; — <b>1st of five</b> named.</div></div></div>
+            <div class="shot" onclick="lb('images/wellness/gemini-best-physio.jpg')"><img src="images/wellness/gemini-best-physio.jpg" alt="Google Gemini" />
+              <div class="cap"><div class="t">Google Gemini</div><div class="d">&ldquo;Best physio clinic Thailand&rdquo; — <b>top of the table</b>.</div></div></div>
+            <div class="shot" onclick="lb('images/aesthetic/aio-best-fillers.jpg')"><img src="images/aesthetic/aio-best-fillers.jpg" alt="Google AI Overview" style="object-fit:contain;background:#0d0d0d" />
+              <div class="cap"><div class="t">Google AI Overview</div><div class="d">&ldquo;Best fillers Bangkok&rdquo; — <b>1st</b> of five clinics.</div></div></div>
+            <div class="shot" onclick="lb('images/ivf-case/ai-responses-0-to-242.jpg')"><img src="images/ivf-case/ai-responses-0-to-242.jpg" alt="Ahrefs AI index" />
+              <div class="cap"><div class="t">Ahrefs AI index</div><div class="d"><b>242</b> AI responses citing one client, from zero.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Cited</span><span class="rt">Client names redacted · positions intact</span></div>
+    </div>
+  </section>
+
+
   <!-- 08 IVF DIAGNOSIS -->
   <section data-screen-label="08 IVF Diagnosis">
     <div class="edge">case study · ivf clinic</div>
     <div class="card">
-      <div class="c-top"><span>Case study · IVF Clinic, Bangkok · SET-listed</span><span>08</span></div>
+      <div class="c-top"><span>Case study · IVF Clinic, Bangkok · SET-listed</span><span class="trk aeo">SEO &amp; AEO</span><span>10</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1.15fr; gap:80px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -488,11 +579,11 @@
           </div>
           <div class="panel" style="padding:32px;">
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; height:100%;">
-              <div class="fig">
+              <div class="fig" onclick="lb('images/ivf-case/robots-ai-crawlers-blocked.jpg')">
                 <img src="images/ivf-case/robots-ai-crawlers-blocked.jpg" alt="robots.txt blocking AI crawlers" />
                 <div class="fc"><div class="ft bad">Diagnosis</div><div class="fd"><b>Eight AI crawlers</b> disallowed at robots.txt — a platform default, not a decision.</div></div>
               </div>
-              <div class="fig">
+              <div class="fig" onclick="lb('images/ivf-case/chatgpt-client-absent.jpg')">
                 <img src="images/ivf-case/chatgpt-client-absent.jpg" alt="ChatGPT top IVF clinics, client absent" />
                 <div class="fc"><div class="ft bad">Consequence</div><div class="fd">Five clinics recommended. <b>The listed clinic is not among them.</b></div></div>
               </div>
@@ -508,7 +599,7 @@
   <section data-screen-label="09 IVF Result">
     <div class="edge">case study · ivf clinic</div>
     <div class="card">
-      <div class="c-top"><span>Case study · IVF Clinic, Bangkok</span><span>09</span></div>
+      <div class="c-top"><span>Case study · IVF Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>11</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px; margin-bottom:6px;">
           <div>
@@ -519,11 +610,11 @@
         </div>
         <div class="panel" style="flex:1; min-height:0; padding:32px;">
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; height:100%;">
-            <div class="fig">
+            <div class="fig" onclick="lb('images/ivf-case/ai-responses-0-to-242.jpg')">
               <img src="images/ivf-case/ai-responses-0-to-242.jpg" alt="0 to 242 AI responses" />
               <div class="fc"><div class="ft good">AI citations</div><div class="fd"><b>0 → 242</b> AI responses across 81 pages, <b>141</b> of them in Google AI Overviews.</div></div>
             </div>
-            <div class="fig">
+            <div class="fig" onclick="lb('images/ivf-case/gsc-jun-vs-aug.jpg')">
               <img src="images/ivf-case/gsc-jun-vs-aug.jpg" alt="Search Console June vs August" />
               <div class="fc"><div class="ft good">Search Console</div><div class="fd">Impressions <b>15.8K → 153K</b>, clicks <b>99 → 487</b>, position <b>32.7 → 16.3</b>.</div></div>
             </div>
@@ -540,11 +631,43 @@
     </div>
   </section>
 
+  <section data-screen-label="Referred Evidence">
+    <div class="edge">referred by third parties</div>
+    <div class="card">
+      <div class="c-top"><span>How it works</span><span class="trk aeo">SEO &amp; AEO</span><span>12</span></div>
+      <div class="stage">
+        <div style="display:grid; grid-template-columns: 1fr 1.25fr; gap:70px; flex:1; min-height:0;">
+          <div style="display:flex; flex-direction:column; justify-content:center;">
+            <h2>Referred: the sites AI reads before answering.</h2>
+            <p class="lede">Models rarely invent a recommendation. They repeat what directories, editorial roundups and review platforms already say.</p>
+            <div class="callout">Get onto those pages and you get into the answer.</div>
+            <p class="what">Where we place clients:</p>
+            <ul class="b">
+              <li>Category directories and &ldquo;best of&rdquo; guides</li>
+              <li>Review platforms with real booking volume</li>
+              <li>Editorial placements on DR 50+ publications</li>
+            </ul>
+          </div>
+          <div class="panel" style="padding:28px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; height:100%;">
+            <div class="shot" onclick="lb('images/referred/directory-rank-1.jpg')"><img src="images/referred/directory-rank-1.jpg" alt="Category directory" />
+              <div class="cap"><div class="t">Category directory</div><div class="d">Ranked <b>1st of 37</b> clinics in the Bangkok category.</div></div></div>
+            <div class="shot" onclick="lb('images/referred/editorial-roundup.jpg')"><img src="images/referred/editorial-roundup.jpg" alt="Editorial guide" style="object-fit:contain;background:#fff" />
+              <div class="cap"><div class="t">Editorial guide</div><div class="d">Named <b>first</b> of five recommended clinics.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Referred</span><span class="rt">Client names redacted</span></div>
+    </div>
+  </section>
+
+
   <!-- 10 WELLNESS -->
   <section data-screen-label="10 Wellness Clinic">
     <div class="edge">case study · wellness clinic</div>
     <div class="card">
-      <div class="c-top"><span>Case study · Wellness Clinic, Bangkok</span><span>10</span></div>
+      <div class="c-top"><span>Case study · Wellness Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>13</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1.15fr; gap:80px; flex:1; min-height:0;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -560,11 +683,11 @@
           </div>
           <div class="panel" style="padding:32px;">
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; height:100%;">
-              <div class="fig">
+              <div class="fig" onclick="lb('images/wellness/chatgpt-best-physio.jpg')">
                 <img src="images/wellness/chatgpt-best-physio.jpg" alt="ChatGPT best physiotherapy clinic Bangkok" />
                 <div class="fc"><div class="ft good">ChatGPT</div><div class="fd">&ldquo;Best physiotherapy clinic Bangkok&rdquo; — <b>named first</b>, above four named competitors.</div></div>
               </div>
-              <div class="fig">
+              <div class="fig" onclick="lb('images/wellness/gemini-best-physio.jpg')">
                 <img src="images/wellness/gemini-best-physio.jpg" alt="Gemini best physio clinic Thailand" />
                 <div class="fc"><div class="ft good">Google Gemini</div><div class="fd">&ldquo;Best physio clinic Thailand&rdquo; — <b>top of the table</b>, specialisms quoted back.</div></div>
               </div>
@@ -580,7 +703,7 @@
   <section data-screen-label="11 Commercial Result">
     <div class="edge">what it is worth</div>
     <div class="card">
-      <div class="c-top"><span>Commercial result</span><span>11</span></div>
+      <div class="c-top"><span>Commercial result</span><span class="trk aeo">SEO &amp; AEO</span><span>14</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px;">
           <div>
@@ -606,7 +729,7 @@
   <section data-screen-label="12 Aesthetic Clinic">
     <div class="edge">case study · aesthetic clinic</div>
     <div class="card">
-      <div class="c-top"><span>Case study · Aesthetic Clinic, Bangkok</span><span>12</span></div>
+      <div class="c-top"><span>Case study · Aesthetic Clinic, Bangkok</span><span class="trk aeo">SEO &amp; AEO</span><span>15</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:80px; flex:1; min-height:0; align-items:stretch;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -624,7 +747,7 @@
             </ul>
           </div>
           <div class="panel" style="padding:32px;">
-            <div class="fig" style="flex:1; min-height:0;">
+            <div class="fig" style="flex:1; min-height:0;" onclick="lb('images/aesthetic/aio-best-fillers.jpg')">
               <img src="images/aesthetic/aio-best-fillers.jpg" alt="Google AI Overview best fillers Bangkok" style="object-fit:contain; background:#0d0d0d;" />
               <div class="fc"><div class="ft good">Google AI Overview</div><div class="fd">&ldquo;Best fillers Bangkok&rdquo; — <b>named first</b> in the ranked list, ahead of four named clinics.</div></div>
             </div>
@@ -639,7 +762,7 @@
   <section data-screen-label="13 Performance Advertising">
     <div class="edge">performance advertising</div>
     <div class="card">
-      <div class="c-top"><span>Performance advertising</span><span>13</span></div>
+      <div class="c-top"><span>Performance advertising</span><span class="trk perf">Performance Marketing</span><span>16</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px; margin-bottom:6px;">
           <div>
@@ -655,11 +778,11 @@
             <div class="stat plain"><div class="n">฿16.45</div><div class="l">Cost per conversion — <b>a third</b> of the restaurant benchmark</div></div>
             <div class="stat plain"><div class="n">5,291</div><div class="l">Direct hotel enquiries, each <b>avoiding OTA commission</b></div></div>
           </div>
-          <div class="fig">
+          <div class="fig" onclick="lb('images/indian-restaurant/pmaxptydec.jpg')">
             <img src="images/indian-restaurant/pmaxptydec.jpg" alt="Performance Max return on ad spend" />
             <div class="fc"><div class="ft">Performance Max</div><div class="fd"><b>2,608% ROAS.</b> 60% of conversions from Maps.</div></div>
           </div>
-          <div class="fig">
+          <div class="fig" onclick="lb('images/italian-restaurant/channel-flow.jpg')">
             <img src="images/italian-restaurant/channel-flow.jpg" alt="Channel attribution" />
             <div class="fc"><div class="ft">Channel attribution</div><div class="fd"><b>71% from Maps</b>, at ฿12.86 per direction request.</div></div>
           </div>
@@ -669,11 +792,41 @@
     </div>
   </section>
 
+  <section data-screen-label="Campaign Evidence">
+    <div class="edge">campaign evidence</div>
+    <div class="card">
+      <div class="c-top"><span>Evidence</span><span class="trk perf">Performance Marketing</span><span>17</span></div>
+      <div class="stage">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:70px; margin-bottom:6px;">
+          <div>
+            <h2>Campaign evidence.</h2>
+            <p class="lede">Straight from the ad accounts. Restaurants, hospitality and venues across Bangkok and Pattaya.</p>
+          </div>
+          <div class="callout" style="margin:0; flex-shrink:0; max-width:360px;">Click any image to view it full size.</div>
+        </div>
+        <div class="panel plain" style="flex:1; min-height:0; padding:28px;">
+          <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:20px; height:100%;">
+            <div class="shot" onclick="lb('images/indian-restaurant/gadsperformancedec.jpg')"><img src="images/indian-restaurant/gadsperformancedec.jpg" alt="Google Ads" />
+              <div class="cap"><div class="t">Google Ads</div><div class="d">Monthly performance — conversions and cost per conversion.</div></div></div>
+            <div class="shot" onclick="lb('images/indian-restaurant/pmaxbkkdec.jpg')"><img src="images/indian-restaurant/pmaxbkkdec.jpg" alt="Performance Max" />
+              <div class="cap"><div class="t">Performance Max</div><div class="d">Bangkok campaign by channel and search term.</div></div></div>
+            <div class="shot" onclick="lb('images/bar-venue/search-intent.jpg')"><img src="images/bar-venue/search-intent.jpg" alt="Search intent" />
+              <div class="cap"><div class="t">Search intent</div><div class="d">&ldquo;Bars near me&rdquo;, &ldquo;live music Bangkok&rdquo; — which terms convert.</div></div></div>
+            <div class="shot" onclick="lb('images/bar-venue/performance-apr.jpg')"><img src="images/bar-venue/performance-apr.jpg" alt="Month on month" />
+              <div class="cap"><div class="t">Month on month</div><div class="d">April against the January baseline — compounding.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="c-bot"><span class="mark"></span><span class="mid">Campaign evidence</span><span class="rt">Google Ads · Performance Max · Meta</span></div>
+    </div>
+  </section>
+
+
   <!-- 14 TESTIMONIAL -->
   <section data-screen-label="14 Testimonial">
     <div class="edge">client testimonial</div>
     <div class="card">
-      <div class="c-top"><span>Client testimonial</span><span>14</span></div>
+      <div class="c-top"><span>Client testimonial</span><span>18</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:80px; flex:1; min-height:0; align-items:stretch;">
           <div style="display:flex; flex-direction:column; justify-content:center;">
@@ -696,7 +849,7 @@
   <section data-screen-label="15 Reviews">
     <div class="edge">client reviews</div>
     <div class="card">
-      <div class="c-top"><span>Client reviews</span><span>15</span></div>
+      <div class="c-top"><span>Client reviews</span><span>19</span></div>
       <div class="stage">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:80px; margin-bottom:6px;">
           <div>
@@ -720,7 +873,7 @@
   <section data-screen-label="16 Contact">
     <div class="edge">next step</div>
     <div class="card">
-      <div class="c-top"><span>Contact</span><span>16</span></div>
+      <div class="c-top"><span>Contact</span><span>20</span></div>
       <div class="stage">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:90px; flex:1; min-height:0; align-items:center;">
           <div>
@@ -742,7 +895,20 @@
 
 </deck-stage>
 
+<div id="lbx" onclick="lbc()"><span id="lbx-x">&times;</span><img id="lbx-img" src="" alt="" /></div>
+<style>
+  #lbx { display:none; position:fixed; inset:0; z-index:9999; background:rgba(10,13,24,.94); align-items:center; justify-content:center; padding:48px; cursor:zoom-out; }
+  #lbx.on { display:flex; }
+  #lbx img { max-width:96%; max-height:94%; object-fit:contain; border-radius:16px; box-shadow:0 40px 120px rgba(0,0,0,.55); }
+  #lbx-x { position:absolute; top:24px; right:38px; font-size:52px; line-height:1; color:rgba(255,255,255,.6); cursor:pointer; font-family:system-ui,sans-serif; }
+  #lbx-x:hover { color:#fff; }
+</style>
+
 <script>
+  function lb(src){ const b=document.getElementById('lbx'); document.getElementById('lbx-img').src=src; b.classList.add('on'); }
+  function lbc(){ document.getElementById('lbx').classList.remove('on'); }
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') lbc(); }, true);
+
   const SERIES = {
     'b-form':  [36.4,36.4,36.4,45.5,31.8,45.5,40.9,50.0,36.4,59.1,72.7,77.3,72.7,54.5,68.2,63.6],
     'b-gfc':   [27.8,44.4,44.4,55.6,50.0,44.4,55.6,55.6,66.7,50.0,50.0,33.3,61.1,66.7,83.3,72.2],
