@@ -240,70 +240,73 @@
   .ba .arw { font-size: 30px; color: var(--muted); }
 
   /* ── packages ── */
-  .pk-grid { display: grid; grid-template-columns: 1fr 1fr 1.42fr; gap: 22px; flex: 1; min-height: 0; }
+  .pk-grid { display: grid; grid-template-columns: 0.86fr 0.9fr 1.78fr; gap: 20px; flex: 1; min-height: 0; }
   .pk {
-    background: var(--tint-2); border-radius: var(--r); padding: 24px 26px 26px;
+    background: var(--tint-2); border-radius: var(--r); padding: 30px 30px 30px;
     display: flex; flex-direction: column; min-height: 0; position: relative;
   }
   .pk.rec {
-    background: var(--tint); border: 1px solid var(--accent);
-    box-shadow: 0 18px 44px rgba(20,33,61,.10);
+    background: var(--tint); border: 1.5px solid var(--accent);
+    padding: 30px 34px; box-shadow: 0 20px 50px rgba(20,33,61,.10);
   }
-  .pk-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-  .pk-idx { font-size: 13px; font-weight: 500; letter-spacing: .18em; color: var(--muted); }
+  .pk-idx { font-size: 12.5px; font-weight: 600; letter-spacing: .2em; color: var(--muted); }
   .pk.rec .pk-idx { color: var(--accent-d); }
   .pk-badge {
+    position: absolute; top: 26px; right: 30px;
     font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
-    color: #fff; background: var(--accent); padding: 5px 11px; border-radius: 999px; white-space: nowrap;
+    color: #fff; background: var(--accent); padding: 6px 13px; border-radius: 999px;
   }
-  .pk-kind { font-size: 12.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--accent-d); margin-top: 16px; }
-  .pk-name { font-size: 30px; font-weight: 700; letter-spacing: -.025em; margin-top: 7px; color: var(--ink); }
-  .pk-price { display: flex; align-items: baseline; gap: 8px; margin-top: 12px; white-space: nowrap; }
-  .pk-price .n { font-size: 42px; font-weight: 700; letter-spacing: -.035em; color: var(--ink); }
-  .pk.rec .pk-price .n { font-size: 50px; color: var(--accent-d); }
+  .pk-name { font-size: 40px; font-weight: 700; letter-spacing: -.03em; margin-top: 12px; color: var(--ink); line-height: 1; }
+  .pk.rec .pk-name { font-size: 40px; }
+  .pk-price { display: flex; align-items: baseline; gap: 9px; margin-top: 16px; white-space: nowrap; }
+  .pk-price .n { font-size: 48px; font-weight: 700; letter-spacing: -.04em; color: var(--ink); line-height: 1; }
+  .pk.rec .pk-price .n { font-size: 54px; color: var(--accent-d); }
   .pk-price .per { font-size: 15px; color: var(--muted); font-weight: 500; }
-  .pk-cond { font-size: 13px; line-height: 1.45; color: var(--muted); margin-top: 8px; }
-  .pk-desc { font-size: 14.5px; line-height: 1.5; color: var(--body); margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(20,33,61,.09); }
-  .pk-list { list-style: none; margin: 14px 0 0; padding: 0; }
-  .pk-list li { position: relative; padding-left: 18px; font-size: 14px; line-height: 1.45; color: var(--body); margin-bottom: 5px; }
+  .pk-cond { font-size: 14.5px; line-height: 1.5; color: var(--ink); font-weight: 500; margin-top: 12px; }
+  .pk-cond .q { display: block; font-size: 13px; font-weight: 400; color: var(--muted); margin-top: 5px; }
+  .pk-pos { font-size: 17px; font-weight: 700; letter-spacing: -.015em; color: var(--ink); margin-top: 18px; line-height: 1.3; }
+  .pk.rec .pk-pos { color: var(--accent-d); font-size: 18px; margin-top: 14px; }
+  .pk-sub { font-size: 11.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 16px 0 9px; }
+  .pk-list { list-style: none; margin: 0; padding: 0; }
+  .pk-list li { position: relative; padding-left: 17px; font-size: 14px; line-height: 1.45; color: var(--body); margin-bottom: 5px; }
   .pk-list li::before { content: '·'; position: absolute; left: 5px; top: -2px; color: var(--accent); font-size: 19px; }
-  .pk-pos {
-    margin-top: auto; padding-top: 16px; font-size: 16px; font-weight: 700;
-    letter-spacing: -.01em; color: var(--ink);
+
+  /* the value case */
+  .pk-value { margin-top: 14px; padding-top: 13px; border-top: 1px solid rgba(194,82,26,.3); }
+  .pk-sum { font-size: 14.5px; color: var(--muted); font-weight: 500; }
+  .pk-sum b { color: var(--body); font-weight: 600; }
+  .pk-hero { display: flex; align-items: baseline; gap: 16px; margin-top: 10px; flex-wrap: nowrap; }
+  .pk-hero .save {
+    font-size: 29px; font-weight: 700; letter-spacing: -.03em; color: var(--accent-d);
+    border-bottom: 3px solid var(--accent); padding-bottom: 3px; white-space: nowrap;
   }
-  .pk.rec .pk-pos { color: var(--accent-d); }
+  .pk-hero .vs {
+    font-size: 15px; font-weight: 700; color: var(--accent-d); white-space: nowrap;
+    background: rgba(194,82,26,.12); padding: 8px 14px; border-radius: 999px;
+  }
 
-  .pk-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; min-height: 0; margin-bottom: 2px; }
-  .pk-sub { font-size: 12.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 9px; }
-  .pk-adi { background: #fff; border-radius: 12px; padding: 13px 15px 14px; }
-  .pk-adi .h { font-size: 15px; font-weight: 700; color: var(--accent-d); margin-bottom: 9px; letter-spacing: -.01em; }
-  .pk-adi .pk-list li { font-size: 12.6px; margin-bottom: 4px; line-height: 1.38; }
+  .pk-cols { display: grid; grid-template-columns: 1fr 1.02fr; gap: 22px; min-height: 0; margin-top: 2px; }
+  .pk-adi { background: #fff; border-radius: 12px; padding: 16px 18px 18px; }
+  .pk-adi .h { font-size: 17px; font-weight: 700; color: var(--ink); letter-spacing: -.015em; }
+  .pk-adi .x { font-size: 12.5px; font-weight: 600; color: var(--accent-d); margin: 5px 0 12px; }
+  .pk-adi .pk-list li { font-size: 13px; margin-bottom: 4px; line-height: 1.4; }
 
-  .pk-save { display: grid; grid-template-columns: auto auto auto 1fr; gap: 12px; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(194,82,26,.28); }
-  .pk-save .cell { text-align: center; }
-  .pk-save .cell .k { font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); }
-  .pk-save .cell .v { font-size: 21px; font-weight: 700; color: var(--ink); letter-spacing: -.02em; margin-top: 4px; white-space: nowrap; }
-  .pk-save .arw { font-size: 19px; color: var(--muted); }
-  .pk-save .hit { text-align: right; }
-  .pk-save .hit .v { font-size: 24px; font-weight: 700; color: var(--accent-d); letter-spacing: -.02em; white-space: nowrap; }
-  .pk-save .hit .k { font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--accent-d); }
-
-  .pk-cta { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 18px; flex-shrink: 0; }
-  .pk-cta .line { font-size: 24px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
-  .pk-cta .line span { color: var(--accent-d); }
-  .pk-cta .act { display: flex; align-items: center; gap: 22px; }
-  .pk-cta .btn {
+  /* close */
+  .pk-close { display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 22px; flex-shrink: 0; }
+  .pk-close .line { font-size: 30px; font-weight: 700; letter-spacing: -.025em; color: var(--ink); }
+  .pk-close .line span { color: var(--accent-d); }
+  .pk-close .btn {
     background: var(--ink); color: var(--card); border-radius: 999px;
-    padding: 12px 24px; font-size: 14.5px; font-weight: 700; letter-spacing: -.01em; white-space: nowrap;
+    padding: 17px 32px; font-size: 17px; font-weight: 700; letter-spacing: -.01em; white-space: nowrap;
   }
-  .pk-cta .contact { font-size: 14px; color: var(--muted); line-height: 1.6; white-space: nowrap; }
-  .pk-foot { font-size: 12.5px; line-height: 1.6; color: var(--muted); margin-top: 14px; }
+  .pk-foot { font-size: 13px; line-height: 1.6; color: var(--muted); margin-top: 14px; }
 
   @media (max-width: 1100px) {
     .pk-grid { grid-template-columns: 1fr; }
     .pk.rec { order: -1; }
     .pk-cols { grid-template-columns: 1fr; }
-    .pk-cta { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .pk-hero { flex-wrap: wrap; }
+    .pk-close { flex-direction: column; align-items: flex-start; gap: 20px; }
   }
 
   /* ===== COVER ===== */
@@ -1124,103 +1127,97 @@
     <div class="card">
       <div class="c-top"><span>Packages</span><span class="trk aeo">Monthly retainer</span><span>25</span></div>
       <div class="stage">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:60px; margin-bottom:18px;">
-          <div>
-            <h2 style="margin-bottom:0;">Three ways to grow.<br/>One covers the full funnel.</h2>
-          </div>
-          <div class="callout" style="margin:0; flex-shrink:0; max-width:420px;">Capture demand today. Build demand for tomorrow.</div>
-        </div>
+        <h2 style="margin:0 0 22px;">Locully Marketing Packages for Clinics</h2>
 
         <div class="pk-grid">
 
           <div class="pk">
-            <div class="pk-top"><span class="pk-idx">01</span></div>
-            <div class="pk-kind">Capture</div>
+            <div class="pk-idx">01 &middot; Capture</div>
             <div class="pk-name">Ads</div>
             <div class="pk-price"><span class="n">฿30,000</span><span class="per">/ month</span></div>
-            <div class="pk-cond">Plus 10% of ad spend <b>above</b> ฿200,000 a month. Nothing on the first ฿200,000.</div>
-            <div class="pk-desc">For businesses that want immediate customer acquisition from paid search and paid social.</div>
+            <div class="pk-cond">+10% of ad spend above ฿200,000 / month
+              <span class="q">Nothing is charged on the first ฿200,000 of monthly ad spend.</span></div>
+            <div class="pk-pos">Capture demand now.</div>
+            <div class="pk-sub">Included</div>
             <ul class="pk-list">
               <li>Google Ads management</li>
               <li>Meta Ads management</li>
-              <li>Campaign strategy and optimisation</li>
+              <li>Campaign strategy &amp; optimisation</li>
               <li>Conversion tracking</li>
-              <li>Landing-page and conversion optimisation</li>
+              <li>Landing-page optimisation</li>
               <li>Performance reporting</li>
             </ul>
-            <div class="pk-pos">Capture demand now.</div>
           </div>
 
           <div class="pk">
-            <div class="pk-top"><span class="pk-idx">02</span></div>
-            <div class="pk-kind">Compound</div>
+            <div class="pk-idx">02 &middot; Compound</div>
             <div class="pk-name">SEO</div>
-            <div class="pk-price"><span class="n">฿50,000</span><span class="per">/ month</span></div>
-            <div class="pk-cond">Media spend is separate, and there is none required.</div>
-            <div class="pk-desc">For businesses building an organic and AI-search acquisition asset over time.</div>
+            <div class="pk-price"><span class="n">฿60,000</span><span class="per">/ month</span></div>
+            <div class="pk-cond">No media spend required
+              <span class="q">The asset keeps working after the campaign ends.</span></div>
+            <div class="pk-pos">Build an acquisition asset<br/>that compounds.</div>
+            <div class="pk-sub">Included</div>
             <ul class="pk-list">
               <li>Technical SEO</li>
-              <li>Commercial content and landing pages</li>
-              <li>Local SEO where relevant</li>
-              <li>AI search and AEO visibility</li>
+              <li>Commercial content &amp; landing pages</li>
+              <li>Local SEO</li>
+              <li>AI search / AEO visibility</li>
               <li>Authority building</li>
-              <li>Ongoing search visibility optimisation</li>
+              <li>Search visibility optimisation</li>
               <li>Reporting</li>
             </ul>
-            <div class="pk-pos">Build demand that compounds.</div>
           </div>
 
           <div class="pk rec">
-            <div class="pk-top"><span class="pk-idx">03</span><span class="pk-badge">Recommended</span></div>
-            <div class="pk-kind">Full funnel</div>
+            <span class="pk-badge">Recommended</span>
+            <div class="pk-idx">03 &middot; Integrated</div>
             <div class="pk-name">SEO + Ads</div>
-            <div class="pk-price"><span class="n">฿65,000</span><span class="per">/ month</span></div>
-            <div class="pk-cond">Everything in Ads and everything in SEO, run as one system. Media spend separate.</div>
+            <div class="pk-price"><span class="n">฿70,000</span><span class="per">/ month</span></div>
 
-            <div class="pk-save">
-              <div class="cell"><div class="k">Ads</div><div class="v">฿30,000</div></div>
-              <div class="cell"><div class="k">SEO</div><div class="v">฿50,000</div></div>
-              <div class="cell"><div class="k">Separately</div><div class="v">฿80,000</div></div>
-              <div class="hit"><div class="k">Together · save ฿15,000 / month</div><div class="v">฿65,000</div></div>
+            <div class="pk-value">
+              <div class="pk-sum">SEO <b>฿60,000</b> + Ads <b>฿30,000</b> = <b>฿90,000</b> separately</div>
+              <div class="pk-hero">
+                <span class="save">Save ฿20,000 / month</span>
+                <span class="vs">+฿10,000 vs SEO</span>
+              </div>
             </div>
 
-            <div class="pk-cols" style="margin-top:16px;">
+            <div class="pk-pos">One team. One acquisition strategy.</div>
+            <div class="pk-cols">
               <div>
-                <div class="pk-sub">Everything in 01 + 02</div>
+                <p style="font-size:14px; line-height:1.5; color:var(--body); margin:8px 0 0;">Paid acquisition captures demand now. SEO and AI visibility build demand that compounds.</p>
+                <div class="pk-sub">Included &mdash; everything in Ads + SEO</div>
                 <ul class="pk-list">
-                  <li>Google and Meta Ads, fully managed</li>
-                  <li>Technical SEO and commercial content</li>
-                  <li>Local SEO and authority building</li>
-                  <li>AI search and AEO visibility</li>
-                  <li>Conversion tracking across both channels</li>
+                  <li>Google &amp; Meta Ads management</li>
+                  <li>SEO &amp; commercial content</li>
+                  <li>AI search / AEO visibility</li>
+                  <li>Conversion tracking across channels</li>
+                  <li>Cross-channel optimisation</li>
                 </ul>
               </div>
               <div class="pk-adi">
                 <div class="h">AI Demand Intelligence</div>
+                <div class="x">Exclusive to the integrated package.</div>
                 <ul class="pk-list">
                   <li>Commercial AI prompt tracking</li>
-                  <li>Competitor recommendation and visibility tracking</li>
+                  <li>Competitor recommendation monitoring</li>
                   <li>AI citation monitoring</li>
-                  <li>AI referral and conversion tracking, where measurable</li>
-                  <li>Search and AI insight fed back into paid decisions</li>
+                  <li>AI referral &amp; conversion tracking where measurable</li>
+                  <li>Search and AI insights fed back into paid decisions</li>
                 </ul>
               </div>
             </div>
-
           </div>
 
         </div>
 
-        <div class="pk-cta">
+        <div class="pk-close">
           <div class="line">The expensive option is <span>being invisible.</span></div>
-          <div class="act">
-            <div class="btn">Start with a 90-day growth plan</div>
-            <div class="contact">locully.org · sunny@locully.org<br/>+66 62 695 9444</div>
-          </div>
+          <div class="btn">Start with a 90-day growth plan &rarr;</div>
         </div>
-        <div class="pk-foot">Management fees exclude media spend. Ads is ฿30,000 a month plus 10% of ad spend above ฿200,000 a month. SEO is ฿50,000 a month. SEO + Ads is ฿65,000 a month, media spend separate.</div>
+        <div class="pk-foot">Management fees exclude media spend. Ads: ฿30,000/month + 10% of ad spend above ฿200,000/month. SEO: ฿60,000/month. SEO + Ads: ฿70,000/month. Media spend separate.</div>
       </div>
-      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Packages</span></span><span class="rt"><span>Monthly retainer · media spend separate</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
+      <div class="c-bot"><span class="lf"><img src="images/brand/locully-mark.png" alt="Locully" /><span>Packages</span></span><span class="rt"><span>locully.org &middot; sunny@locully.org &middot; +66 62 695 9444</span><img src="images/brand/locully.png" alt="Locully" /></span></div>
     </div>
   </section>
 
