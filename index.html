@@ -4,6 +4,28 @@
 <meta charset="utf-8" />
 <title>Locully — Company Profile 2026</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K5DX47SL');</script>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2006380633454505');fbq('track','PageView');
+</script>
+<!-- Microsoft Clarity -->
+<script>
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window,document,"clarity","script","w0qn5hyjb1");
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -1338,6 +1360,46 @@
   }
 </script>
 
+<!-- Deck tracking: per-recipient ref (?r=name), slide views, time per slide -->
+<script>
+(function(){
+  var ref = new URLSearchParams(location.search).get('r');
+  try { if (ref) sessionStorage.setItem('deck_ref', ref); else ref = sessionStorage.getItem('deck_ref'); } catch (e) {}
+  ref = ref || 'direct';
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({ event: 'deck_open', deck_ref: ref });
+  clarity('set', 'deck_ref', ref);
+  if (ref !== 'direct') clarity('identify', ref);
+  fbq('trackCustom', 'DeckOpen', { deck_ref: ref });
+
+  var cur = null, since = 0, maxIdx = 0, total = 0;
+  function flush(){
+    if (!cur) return;
+    var secs = Math.round((Date.now() - since) / 1000);
+    if (secs > 0) dataLayer.push({ event: 'deck_slide_time', slide_name: cur, seconds: secs, deck_ref: ref });
+    since = Date.now();
+  }
+  document.addEventListener('slidechange', function(e){
+    var d = e.detail, name = (d.slide && d.slide.getAttribute('data-screen-label')) || String(d.index + 1);
+    flush();
+    cur = name; since = Date.now(); total = d.total;
+    if (d.index + 1 > maxIdx) {
+      maxIdx = d.index + 1;
+      clarity('set', 'max_slide', String(maxIdx));
+    }
+    dataLayer.push({ event: 'deck_slide_view', slide_index: d.index + 1, slide_name: name, deck_ref: ref });
+    clarity('event', 'slide_' + name.replace(/\W+/g, '_'));
+    fbq('trackCustom', 'DeckSlideView', { slide_name: name, slide_index: d.index + 1, deck_ref: ref });
+    if (/Packages|Contact/.test(name)) fbq('track', 'ViewContent', { content_name: 'Profile deck - ' + name, deck_ref: ref });
+  });
+  document.addEventListener('visibilitychange', function(){
+    if (document.visibilityState === 'hidden') {
+      flush();
+      dataLayer.push({ event: 'deck_exit', max_slide: maxIdx, total_slides: total, deck_ref: ref });
+    } else since = Date.now();
+  });
+})();
+</script>
 <script src="deck-stage.js"></script>
 <script src="https://widget.senja.io/widget/e78045b1-0c17-4032-ae66-d945b9ace7b2/platform.js" type="text/javascript" async></script>
 </body>
