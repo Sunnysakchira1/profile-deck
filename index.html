@@ -1201,6 +1201,28 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
 </deck-stage>
 
+
+<style>
+  /* cover-only link to the phone version; sits above the deck's tap zones so it can be tapped */
+  #mlink { position:fixed; left:50%; bottom:max(9vh, 56px); transform:translateX(-50%); z-index:2147483600;
+    background:#e26a2c; color:#fff; font-family:'Google Sans',system-ui,sans-serif; font-weight:700;
+    font-size:clamp(13px, 1.25vw, 20px); letter-spacing:.12em; text-transform:uppercase; text-decoration:none;
+    padding:.85em 1.6em; border-radius:999px; box-shadow:0 10px 30px rgba(20,33,61,.28); white-space:nowrap; }
+  #mlink:hover, #mlink:focus-visible { background:#c2521a; outline:none; }
+  @media (min-aspect-ratio: 4/3) { #mlink { bottom:auto; top:6.6vh; font-size:clamp(11px, 1vw, 16px); padding:.7em 1.4em; } }
+  #mlink[hidden] { display:none; }
+  @media print { #mlink { display:none; } }
+</style>
+<a id="mlink" href="https://sunnysakchira1.github.io/profile-deck-mobile/">Click here if on mobile</a>
+<script>
+  (function(){
+    var a=document.getElementById('mlink');
+    try { if (location.search) a.href += location.search; } catch(e) {}
+    function sync(i){ a.hidden = i !== 0; }
+    var h=(location.hash||'').match(/^#(\d+)$/); sync(h ? parseInt(h[1],10)-1 : 0);
+    document.addEventListener('slidechange', function(e){ sync(e.detail.index); });
+  })();
+</script>
 <div id="lbx" onclick="lbc()"><span id="lbx-x">&times;</span><img id="lbx-img" src="" alt="" /></div>
 <style>
   #lbx { display:none; position:fixed; inset:0; z-index:9999; background:rgba(10,13,24,.94); align-items:center; justify-content:center; padding:48px; cursor:zoom-out; }
